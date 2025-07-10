@@ -11,31 +11,6 @@ h1 {
   font-size: 45px;
 }
 
-.contenedor {
-  border: 2px solid darkblue;
-  padding: 20px;
-  width: 350px;
-  margin: 0 auto;
-  border-radius: 10px;
-  background-color: #f4f4f4;
-}
-
-label {
-  font-weight: bold;
-  display: block;
-  text-align: left;
-  margin-top: 10px;
-}
-
-input, select {
-  width: 100%;
-  padding: 8px;
-  margin-top: 5px;
-  margin-bottom: 10px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-}
-
 button {
   background-color: darkblue;
   color: white;
@@ -63,16 +38,15 @@ button:hover {
   flex: 1;
   border-radius: 20px;
   border: 1px solid #ddd;
-  padding: 8px 15px;
+  padding: 8px 10px;
 }
 
 .search-container .btn {
   border-radius: 20px;
   padding: 8px 20px;
-  white-space: nowrap;
 }
 
-#gestionarLib{
+#gestionar{
   background-color: #52b4c5;
   color: white;
   padding: 10px 15px;
@@ -87,28 +61,27 @@ button:hover {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  gap: 15px;
-  margin: 20px;
+  gap: 10px;
+  margin: 15px;
   flex-wrap: wrap;
   width: calc(100% - 40px);
 }
 
 .card {
-  border: 1px solid #ddd;
+  border: 1px solid #d7dbff;
 }
 
 .card-img-top {
-  width: 100%;
-  height: 400px;
-  object-fit: cover;
+  width: 290px;
+  height: 375px;
 }
 
 .card-body {
-  padding: 15px;
+  padding: 10px;
 }
 
 .card-title {
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   color: #333;
   font-size: 18px;
 }
