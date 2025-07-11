@@ -206,3 +206,10 @@ th {
   background: #52b4c5;
   color: #fff;
 }
+
+footer{
+  text-align: justify;
+  padding: 20px;
+  background-color: #5988ee31;
+  color: darkblue;
+}
