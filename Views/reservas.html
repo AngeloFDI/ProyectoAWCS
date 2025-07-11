@@ -20,67 +20,73 @@
     <section>
         <h1 id="titulo">Reservas</h1>
         <div class="container">
-            <p>Seleccione el tipo de recurso que desea reservar:</p>
-            <div class="selector-container">
-                <button onclick="showForm('libro')">Libro</button>
-                <button onclick="showForm('tableta')">Tableta</button>
-                <button onclick="showForm('computadora')">Computadora</button>
-            </div>
-
-            <!-- Formulario para reservar LIBRO -->
-            <div id="form-libro" class="form-section">
-                <form>
-                    <label for="libro-nombre">Libro:</label>
-                    <select id="libro-nombre" required>
-                        <option value="">Selecciona un libro</option>
-                        <option>El Diario de Ana Frank</option>
-                        <option>Cien Años de Soledad</option>
-                        <option>Don Quijote de la Mancha</option>
-                        <option>El Principito</option>
-                    </select>
-                    <label for="nombre-usuario-libro">Nombre del usuario:</label>
-                    <input type="text" id="nombre-usuario-libro" required>
-                    <label for="fecha-libro">Fecha de reserva:</label>
-                    <input type="date" id="fecha-libro" required>
-                    <button type="submit">Reservar Libro</button>
+            <nav class="navbar navbar-light bg-light">
+                <form class="form-inline search-container">
+                    <input class="form-control" type="search" placeholder="Buscar en reservas" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Buscar</button>
+                    <button id="gestionar"> Gestionar Reservas </button>
                 </form>
-            </div>
+                <p>Seleccione el tipo de recurso que desea reservar:</p>
+                <div class="selector-container">
+                    <button onclick="showForm('libro')">Libro</button>
+                    <button onclick="showForm('tableta')">Tableta</button>
+                    <button onclick="showForm('computadora')">Computadora</button>
+                </div>
 
-            <!-- Formulario para reservar TABLETA -->
-            <div id="form-tableta" class="form-section">
-                <form>
-                    <label for="tableta-modelo">Modelo de tableta:</label>
-                    <select id="tableta-modelo" required>
-                        <option value="">Seleccione una tableta</option>
-                        <option>iPad 10.2" 2021</option>
-                        <option>Samsung Galaxy Tab S6 Lite</option>
-                        <option>Lenovo Tab P11</option>
-                    </select>
-                    <label for="nombre-usuario-tableta">Nombre del usuario:</label>
-                    <input type="text" id="nombre-usuario-tableta" required>
-                    <label for="fecha-tableta">Fecha de reserva:</label>
-                    <input type="date" id="fecha-tableta" required>
-                    <button type="submit">Reservar Tableta</button>
-                </form>
-            </div>
+                <!-- Formulario para reservar LIBRO -->
+                <div id="form-libro" class="form-section">
+                    <form>
+                        <label for="libro-nombre">Libro:</label>
+                        <select id="libro-nombre" required>
+                            <option value="">Selecciona un libro</option>
+                            <option>El Diario de Ana Frank</option>
+                            <option>Cien Años de Soledad</option>
+                            <option>Don Quijote de la Mancha</option>
+                            <option>El Principito</option>
+                        </select>
+                        <label for="nombre-usuario-libro">Nombre del usuario:</label>
+                        <input type="text" id="nombre-usuario-libro" required>
+                        <label for="fecha-libro">Fecha de reserva:</label>
+                        <input type="date" id="fecha-libro" required>
+                        <button type="submit">Reservar Libro</button>
+                    </form>
+                </div>
 
-            <!-- Formulario para reservar COMPUTADORA -->
-            <div id="form-computadora" class="form-section">
-                <form>
-                    <label for="computadora-modelo">Modelo de computadora:</label>
-                    <select id="computadora-modelo" required>
-                        <option value="">Seleccione una computadora</option>
-                        <option>HP EliteBook 840</option>
-                        <option>Dell Latitude 5420</option>
-                        <option>MacBook Air M1</option>
-                    </select>
-                    <label for="nombre-usuario-computadora">Nombre del usuario:</label>
-                    <input type="text" id="nombre-usuario-computadora" required>
-                    <label for="fecha-computadora">Fecha de reserva:</label>
-                    <input type="date" id="fecha-computadora" required>
-                    <button type="submit">Reservar Computadora</button>
-                </form>
-            </div>
+                <!-- Formulario para reservar TABLETA -->
+                <div id="form-tableta" class="form-section">
+                    <form>
+                        <label for="tableta-modelo">Modelo de tableta:</label>
+                        <select id="tableta-modelo" required>
+                            <option value="">Seleccione una tableta</option>
+                            <option>iPad 10.2" 2021</option>
+                            <option>Samsung Galaxy Tab S6 Lite</option>
+                            <option>Lenovo Tab P11</option>
+                        </select>
+                        <label for="nombre-usuario-tableta">Nombre del usuario:</label>
+                        <input type="text" id="nombre-usuario-tableta" required>
+                        <label for="fecha-tableta">Fecha de reserva:</label>
+                        <input type="date" id="fecha-tableta" required>
+                        <button type="submit">Reservar Tableta</button>
+                    </form>
+                </div>
+
+                <!-- Formulario para reservar COMPUTADORA -->
+                <div id="form-computadora" class="form-section">
+                    <form>
+                        <label for="computadora-modelo">Modelo de computadora:</label>
+                        <select id="computadora-modelo" required>
+                            <option value="">Seleccione una computadora</option>
+                            <option>HP EliteBook 840</option>
+                            <option>Dell Latitude 5420</option>
+                            <option>MacBook Air M1</option>
+                        </select>
+                        <label for="nombre-usuario-computadora">Nombre del usuario:</label>
+                        <input type="text" id="nombre-usuario-computadora" required>
+                        <label for="fecha-computadora">Fecha de reserva:</label>
+                        <input type="date" id="fecha-computadora" required>
+                        <button type="submit">Reservar Computadora</button>
+                    </form>
+                </div>
 
         </div>
     </section>
