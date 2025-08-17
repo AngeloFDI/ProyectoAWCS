@@ -4,14 +4,14 @@
 <head>
   <meta charset="UTF-8">
   <title>Computadoras</title>
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="app/css/style.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
-
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body>
   <nav class="navbar-main">
-        <span style="float:right;">Bienvenido, <?= htmlspecialchars($usuario['nombre']) ?></span>
+        <span style="float:right; color: #fff; font-weight: bold;">Bienvenido, <?= htmlspecialchars($usuario['nombre']) ?></span>
         <a href="index.php?controller=home&action=index">Inicio</a>
         <a href="index.php?controller=computadoras&action=index" class="active">Computadoras</a>
         <a href="index.php?controller=tabletas&action=index">Tabletas</a>

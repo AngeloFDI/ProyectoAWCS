@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Registrarse</title>
-    <link rel="stylesheet" href="css/style.css">
-    <script src="">"js/jquery-3.7.1.min.js"</script>
+    <link rel="stylesheet" href="app/css/style.css">
+    <script src="js/jquery-3.7.1.min.js"></script>
     <script src="js/register.js"></script>
 </head>
 <body>

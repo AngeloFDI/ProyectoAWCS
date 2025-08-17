@@ -1,14 +1,27 @@
 body {
+  overflow-x: hidden;
   font-family: Arial, sans-serif;
   text-align: center;
   background-color: #fff;
   color: #000;
 }
 
-h1 {
-  color: rgb(255, 255, 255);
-  background-color: darkblue;
-  font-size: 45px;
+h1, #titulo, h1#titulo {
+    color: #fff !important;
+    background: #001489;                 /* Azul fuerte y oscuro para contraste */
+    font-size: 45px;
+    padding: 22px 0 22px 0;
+    margin: 0;
+    width: 100vw;                        /* OCUPA TODO EL ANCHO DE LA VENTANA */
+    position: relative;
+    left: 50%;
+    right: 50%;
+    transform: translateX(-50%);
+    text-align: center !important;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 3px 14px #001b4433;
+    letter-spacing: 1px;
+    z-index: 1;
 }
 
 button {
@@ -188,6 +201,11 @@ th {
   align-items: center;
   padding: 12px 0;
   margin-bottom: 28px;
+}
+
+.navbar-main span {
+    color: #fff;
+    font-weight: bold;
 }
 
 .navbar-main a {

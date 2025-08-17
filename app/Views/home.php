@@ -4,14 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Inventario Biblioteca</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="app/css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body>
     <nav class="navbar-main">
-        <span style="float:right;">Bienvenido, <?= htmlspecialchars($usuario['nombre']) ?></span>
+        <span style="float:right; color: #fff; font-weight: bold;">Bienvenido, <?= htmlspecialchars($usuario['nombre']) ?></span>
         <a href="index.php?controller=home&action=index" class="active">Inicio</a>
         <a href="index.php?controller=computadoras&action=index">Computadoras</a>
         <a href="index.php?controller=tabletas&action=index">Tabletas</a>
@@ -21,8 +21,8 @@
         <a href="index.php?controller=reportes&action=index">Reportes</a>
         <a href="index.php?controller=auth&action=logout"><button>Cerrar sesión</button></a>
     </nav>
+    <h1 id="titulo">Biblioteca del Liceo San José</h1>
     <section>
-        <h1 id="titulo">Biblioteca del Liceo San José</h1>
         <div class="container">
             <div id="biblioCarousel" class="carousel slide mx-auto mb-5" data-bs-ride="carousel"
                 style="max-width:2200px; width:100%;">
@@ -59,6 +59,7 @@
                     <span class="visually-hidden">Siguiente</span>
                 </button>
             </div>
+        </div>
     </section>
     <footer>
         <i class="bi bi-facebook"> BiblioCra San José</i><br><br>
