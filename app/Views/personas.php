@@ -21,7 +21,7 @@ if (!defined('IN_APP')) { die('Acceso denegado.'); }
     <a href="index.php?controller=computadoras&action=index">Computadoras</a>
     <a href="index.php?controller=tabletas&action=index">Tabletas</a>
     <a href="index.php?controller=libros&action=index">Libros</a>
-    <a href="index.php?controller=personas&action=index"class="active">Usuarios</a>
+    <a href="index.php?controller=personas&action=index" class="active">Usuarios</a>
     <a href="index.php?controller=reserva&action=index">Reservas</a>
     <a href="index.php?controller=reportes&action=index">Reportes</a>
     <a href="index.php?controller=perfil&action=editar">Mi Perfil</a>
@@ -33,37 +33,14 @@ if (!defined('IN_APP')) { die('Acceso denegado.'); }
       <button class="btn btn-success mb-2" onclick="window.location='index.php?controller=personas&action=crear_form'">
         <i class="bi bi-person-plus"></i> Crear Usuario
       </button>
-      <table class="tabla-personas table table-bordered">
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Nombre</th>
-            <th>Apellido</th>
-            <th>Correo</th>
-            <th>Rol</th>
-            <th>Sección</th>
-            <th>Estado</th>
-            <th>Acciones</th>
-          </tr>
-        </thead>
-        <tbody>
-        <?php foreach ($usuarios as $u): ?>
-          <tr>
-            <td><?= $u['id_usuario'] ?></td>
-            <td><?= htmlspecialchars($u['nombre']) ?></td>
-            <td><?= htmlspecialchars($u['apellido']) ?></td>
-            <td><?= htmlspecialchars($u['correo']) ?></td>
-            <td><?= htmlspecialchars($u['rol']) ?></td>
-            <td><?= htmlspecialchars($u['seccion']) ?></td>
-            <td><?= $u['estado_usuario'] ? 'Activo' : 'Inactivo' ?></td>
-            <td>
-              <a href="index.php?controller=personas&action=editar_form&id=<?= $u['id_usuario'] ?>" class="btn btn-info btn-sm">Editar</a>
-              <button class="btn btn-danger btn-sm borrarUsuario" data-id="<?= $u['id_usuario'] ?>">Eliminar</button>
-            </td>
-          </tr>
-        <?php endforeach; ?>
-        </tbody>
-      </table>
+      <nav class="navbar navbar-light bg-light mb-2">
+        <form class="form-inline search-container" id="form-buscar">
+          <input class="form-control" type="search" placeholder="Buscar persona" aria-label="Search" id="input-buscar">
+          <button class="btn btn-outline-success" type="submit">Buscar</button>
+        </form>
+      </nav>
+      <div id="lista-personas"></div>
+      <div id="paginacion-personas" class="mt-2"></div>
     </div>
   </section>
   <footer>
@@ -72,7 +49,7 @@ if (!defined('IN_APP')) { die('Acceso denegado.'); }
       <i class="bi bi-book">  Biblioteca Liceo San José desde 1995</i>
   </footer>
   <script src="js/jquery-3.7.1.min.js"></script>
-  <script src="js/crud_usuario.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="js/crud_usuario.js"></script>
 </body>
 </html>

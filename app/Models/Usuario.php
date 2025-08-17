@@ -4,6 +4,7 @@ require_once(__DIR__ . '/../config/db.php');
 class Usuario {
     public $id_usuario, $nombre, $apellido, $correo, $contrasena, $rol, $seccion, $fecha_registro, $estado_usuario;
 
+    // Obtener todos los usuarios
     public static function obtenerTodos() {
         $db = Database::connect();
         $result = $db->query("SELECT * FROM usuario");
@@ -14,6 +15,7 @@ class Usuario {
         return $usuarios;
     }
 
+    // Guardar nuevo usuario
     public static function guardar($post) {
         $db = Database::connect();
         $nombre = $db->real_escape_string($post['nombre'] ?? '');
@@ -38,6 +40,7 @@ class Usuario {
         }
     }
 
+    // Buscar usuario por ID
     public static function buscarPorId($id) {
         $db = Database::connect();
         $id = intval($id);
@@ -45,6 +48,7 @@ class Usuario {
         return $result->fetch_assoc();
     }
 
+    // Actualizar usuario
     public static function actualizar($post) {
         $db = Database::connect();
         $id = intval($post['id_usuario']);
@@ -69,6 +73,7 @@ class Usuario {
         }
     }
 
+    // Eliminar usuario
     public static function eliminar($id) {
         $db = Database::connect();
         $id = intval($id);
@@ -78,5 +83,25 @@ class Usuario {
         } else {
             return ['success' => false, 'msg' => 'Error al borrar: '.$db->error];
         }
+    }
+
+    // Búsqueda y paginación de usuarios
+    public static function buscarPaginado($query = '', $pagina = 1, $porPagina = 10) {
+        $db = Database::connect();
+        $query = $db->real_escape_string($query);
+        $offset = ($pagina - 1) * $porPagina;
+
+        // Búsqueda por nombre, apellido o correo (ajusta campos según tu tabla)
+        $where = $query ? "WHERE nombre LIKE '%$query%' OR apellido LIKE '%$query%' OR correo LIKE '%$query%'" : "";
+
+        $sql = "SELECT SQL_CALC_FOUND_ROWS * FROM usuario $where LIMIT $offset, $porPagina";
+        $result = $db->query($sql); // CORREGIDO: faltaba el '$' delante de 'result'
+        $resultados = [];
+        while ($row = $result->fetch_assoc()) {
+            $resultados[] = $row;
+        }
+        // Total de resultados para paginación
+        $totalResult = $db->query("SELECT FOUND_ROWS() AS total")->fetch_assoc()['total'];
+        return ['usuarios' => $resultados, 'total' => $totalResult];
     }
 }

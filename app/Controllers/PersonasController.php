@@ -74,4 +74,17 @@ class PersonasController {
         $resp = Usuario::eliminar($id);
         echo json_encode($resp);
     }
+
+    // Busqueda y paginas (por AJAX)
+    public function ajax_listado() {
+        if (!isset($_SESSION['usuario']) || $_SESSION['usuario']['rol'] !== 'personal') {
+            echo json_encode(['success' => false, 'msg' => 'Acceso denegado.']);
+            return;
+        }
+        $query = $_POST['busqueda'] ?? '';
+        $pagina = isset($_POST['pagina']) ? intval($_POST['pagina']) : 1;
+        $porPagina = 10;
+        $data = Usuario::buscarPaginado($query, $pagina, $porPagina);
+        echo json_encode(['success' => true, 'usuarios' => $data['usuarios'], 'total' => $data['total']]);
+    }
 }

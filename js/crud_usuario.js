@@ -1,12 +1,96 @@
 $(document).ready(function () {
 
-    // Validación y submit para crear/editar usuario
+    // Variables globales de búsqueda/paginado
+    let paginaActual = 1;
+    let busquedaActual = "";
+
+    // --------- Listado, búsqueda y paginación AJAX ---------
+    function cargarUsuarios(pagina, busqueda) {
+        $.post(
+            'index.php?controller=personas&action=ajax_listado',
+            { pagina: pagina, busqueda: busqueda },
+            function (resp) {
+                try {
+                    var r = (typeof resp === "object") ? resp : JSON.parse(resp);
+                    if (r.success) {
+                        renderTabla(r.usuarios);
+                        renderPaginacion(r.total, pagina);
+                    } else {
+                        $('#lista-personas').html('<div class="alert alert-danger">' + (r.msg || "Error") + '</div>');
+                    }
+                } catch (e) {
+                    $('#lista-personas').html('Error inesperado');
+                }
+            }
+        );
+    }
+
+    function renderTabla(usuarios) {
+        let html = `<table class="tabla-personas table table-bordered"><thead>
+            <tr><th>ID</th><th>Nombre</th><th>Apellido</th><th>Correo</th><th>Rol</th>
+                <th>Sección</th><th>Estado</th><th>Acciones</th></tr></thead><tbody>`;
+        if (usuarios.length == 0) {
+            html += `<tr><td colspan="8" class="text-center text-muted">No hay resultados</td></tr>`;
+        } else {
+            usuarios.forEach(function (u) {
+                html += `<tr>
+                   <td>${u.id_usuario}</td>
+                   <td>${u.nombre}</td>
+                   <td>${u.apellido}</td>
+                   <td>${u.correo}</td>
+                   <td>${u.rol}</td>
+                   <td>${u.seccion || ''}</td>
+                   <td>${u.estado_usuario == 1 ? 'Activo' : 'Inactivo'}</td>
+                   <td>
+                      <a href="index.php?controller=personas&action=editar_form&id=${u.id_usuario}" class="btn btn-info btn-sm">Editar</a>
+                      <button class="btn btn-danger btn-sm borrarUsuario" data-id="${u.id_usuario}">Eliminar</button>
+                   </td>
+                </tr>`;
+            });
+        }
+        html += `</tbody></table>`;
+        $('#lista-personas').html(html);
+    }
+
+    function renderPaginacion(total, paginaActual, porPagina = 10) {
+        let html = '';
+        let paginas = Math.ceil(total / porPagina);
+        if (paginas <= 1) {
+            $('#paginacion-personas').html('');
+            return;
+        }
+        for (let i = 1; i <= paginas; i++) {
+            html += `<button class="btn btn-sm ${i == paginaActual ? 'btn-primary' : 'btn-light'} paginadorPersona" data-pagina="${i}">${i}</button> `;
+        }
+        $('#paginacion-personas').html(html);
+    }
+
+    // Buscar
+    $('#form-buscar').submit(function (e) {
+        e.preventDefault();
+        const busqueda = $('#input-buscar').val().trim();
+        paginaActual = 1;
+        busquedaActual = busqueda;
+        cargarUsuarios(paginaActual, busquedaActual);
+    });
+
+    // Paginación
+    $(document).on('click', '.paginadorPersona', function () {
+        let nuevaPagina = $(this).data('pagina');
+        paginaActual = nuevaPagina;
+        cargarUsuarios(paginaActual, busquedaActual);
+    });
+
+    // Carga inicial
+    if ($("#lista-personas").length)
+        cargarUsuarios(1, "");
+
+    // --------- Crear / Editar con validaciones y SweetAlert ---------
     if ($('#form-usuario').length) {
         $('#form-usuario').submit(function (e) {
             e.preventDefault();
-            $('#alerta-usuario').html('');
 
-            // VALIDACIONES previas (puedes ajustar a tu gusto)
+            // VALIDACIONES previas
             const nombre = $('input[name="nombre"]').val().trim();
             const apellido = $('input[name="apellido"]').val().trim();
             const correo = $('input[name="correo"]').val().trim();
@@ -62,7 +146,7 @@ $(document).ready(function () {
         });
     }
 
-    // Eliminar usuario (con confirmación SweetAlert)
+    // --------- Eliminar usuario con SweetAlert ---------
     $(document).on('click', '.borrarUsuario', function () {
         var id = $(this).data('id');
         Swal.fire({
@@ -105,4 +189,5 @@ $(document).ready(function () {
             }
         });
     });
+
 });
