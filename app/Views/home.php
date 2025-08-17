@@ -34,8 +34,8 @@ if (!defined('IN_APP')) {
             <a href="index.php?controller=tabletas&action=index">Tabletas</a>
             <a href="index.php?controller=libros&action=index">Libros</a>
             <a href="index.php?controller=reserva&action=index">Reservas</a>
-            <a href="index.php?controller=perfil&action=editar">Mi Perfil</a>
         <?php endif; ?>
+        <a href="index.php?controller=perfil&action=editar">Mi Perfil</a>
         <a href="index.php?controller=auth&action=logout"><button>Cerrar sesión</button></a>
     </nav>
     <h1 id="titulo">Biblioteca del Liceo San José</h1>
@@ -133,8 +133,7 @@ if (!defined('IN_APP')) {
                     </div>
                 </div>
                 <?php endif; ?>
-                <!-- SOLO PARA ESTUDIANTE: Editar Perfil -->
-                <?php if ($usuario['rol'] === 'estudiante'): ?>
+                <!-- CARD para Editar Perfil -->
                 <div class="card">
                     <div class="card-body">
                         <h4 class="card-title">Editar Perfil</h4>
@@ -143,7 +142,6 @@ if (!defined('IN_APP')) {
                         </a>
                     </div>
                 </div>
-                <?php endif; ?>
             </div>
         </div>
     </section>
