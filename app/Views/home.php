@@ -16,14 +16,26 @@ if (!defined('IN_APP')) {
 
 <body>
     <nav class="navbar-main">
-        <span style="float:right; color: #fff; font-weight: bold;">Bienvenido, <?= htmlspecialchars($usuario['nombre']) ?></span>
+        <span style="float:right; color: #fff; font-weight: bold;">
+            Bienvenido, <?= htmlspecialchars($usuario['nombre']) ?> (<?= htmlspecialchars($usuario['rol']) ?>)
+        </span>
         <a href="index.php?controller=home&action=index" class="active">Inicio</a>
-        <a href="index.php?controller=computadoras&action=index">Computadoras</a>
-        <a href="index.php?controller=tabletas&action=index">Tabletas</a>
-        <a href="index.php?controller=libros&action=index">Libros</a>
-        <a href="index.php?controller=personas&action=index">Personas</a>
-        <a href="index.php?controller=reserva&action=index">Reservas</a>
-        <a href="index.php?controller=reportes&action=index">Reportes</a>
+        <!-- Menú para PERSONAL -->
+        <?php if ($usuario['rol'] === 'personal'): ?>
+            <a href="index.php?controller=computadoras&action=index">Computadoras</a>
+            <a href="index.php?controller=tabletas&action=index">Tabletas</a>
+            <a href="index.php?controller=libros&action=index">Libros</a>
+            <a href="index.php?controller=personas&action=index">Usuarios</a>
+            <a href="index.php?controller=reserva&action=index">Reservas</a>
+            <a href="index.php?controller=reportes&action=index">Reportes</a>
+        <?php else: ?>
+        <!-- Menú para ESTUDIANTE -->
+            <a href="index.php?controller=computadoras&action=index">Computadoras</a>
+            <a href="index.php?controller=tabletas&action=index">Tabletas</a>
+            <a href="index.php?controller=libros&action=index">Libros</a>
+            <a href="index.php?controller=reserva&action=index">Reservas</a>
+            <a href="index.php?controller=perfil&action=editar">Mi Perfil</a>
+        <?php endif; ?>
         <a href="index.php?controller=auth&action=logout"><button>Cerrar sesión</button></a>
     </nav>
     <h1 id="titulo">Biblioteca del Liceo San José</h1>
@@ -64,6 +76,75 @@ if (!defined('IN_APP')) {
                     <span class="visually-hidden">Siguiente</span>
                 </button>
             </div>
+            
+            <div class="cards-container">
+                <!-- CARD para Computadoras -->
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Computadoras</h4>
+                        <a href="index.php?controller=computadoras&action=index">
+                            <button>Ir a Computadoras</button>
+                        </a>
+                    </div>
+                </div>
+                <!-- CARD para Tabletas -->
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Tabletas</h4>
+                        <a href="index.php?controller=tabletas&action=index">
+                            <button>Ir a Tabletas</button>
+                        </a>
+                    </div>
+                </div>
+                <!-- CARD para Libros -->
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Libros</h4>
+                        <a href="index.php?controller=libros&action=index">
+                            <button>Ir a Libros</button>
+                        </a>
+                    </div>
+                </div>
+                <!-- CARD para Reservas -->
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Reservas</h4>
+                        <a href="index.php?controller=reserva&action=index">
+                            <button>Reservar</button>
+                        </a>
+                    </div>
+                </div>
+                <!-- SOLO PARA PERSONAL: Usuarios y Reportes -->
+                <?php if ($usuario['rol'] === 'personal'): ?>
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Usuarios</h4>
+                        <a href="index.php?controller=personas&action=index">
+                            <button>Administrar Usuarios</button>
+                        </a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Reportes</h4>
+                        <a href="index.php?controller=reportes&action=index">
+                            <button>Ver Reportes</button>
+                        </a>
+                    </div>
+                </div>
+                <?php endif; ?>
+                <!-- SOLO PARA ESTUDIANTE: Editar Perfil -->
+                <?php if ($usuario['rol'] === 'estudiante'): ?>
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Editar Perfil</h4>
+                        <a href="index.php?controller=perfil&action=editar">
+                            <button>Editar mi Perfil</button>
+                        </a>
+                    </div>
+                </div>
+                <?php endif; ?>
+            </div>
         </div>
     </section>
     <footer>
@@ -73,5 +154,4 @@ if (!defined('IN_APP')) {
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>
