@@ -10,13 +10,13 @@
 </head>
 
 <body>
-    <section>
+    <section class="login-section">
         <h1>Iniciar Sesión</h1>
         <?php if($mensaje): ?>
         <p style="color:red;"><?= $mensaje ?></p>
         <?php endif; ?>
 
-        <form method="POST" action="index.php?controller=auth&action=login">
+        <form method="POST" action="index.php?controller=auth&action=login" class="login-form">
             <input type="email" name="correo" placeholder="Correo"><br><br>
             <input type="password" name="contrasena" placeholder="Contraseña"><br><br>
             <button type="submit">Ingresar</button>
