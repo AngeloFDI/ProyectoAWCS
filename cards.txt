@@ -1,0 +1,61 @@
+<div class="cards-container">
+                <div class="card" style="width: 18rem;">
+                    <img src="https://img.freepik.com/vector-premium/diseno-plano-icono-portatil_23-2148083760.jpg"
+                        alt="Computadoras" class="card-img-top">
+                    <div class="card-body">
+                        <h4 class="card-title">Computadoras</h4>
+                        <a href="app/Views/computadoras.php">
+                            <button>Ir a Computadoras</button>
+                        </a>
+                    </div>
+                </div>
+                <div class="card" style="width: 18rem;">
+                    <img src="https://cdn-icons-png.flaticon.com/512/685/685655.png" alt="Tabletas"
+                        class="card-img-top">
+                    <div class="card-body">
+                        <h4 class="card-title">Tabletas</h4>
+                        <a href="app/Views/tabletas.php">
+                            <button>Ir a Tabletas</button>
+                        </a>
+                    </div>
+                </div>
+                <div class="card" style="width: 18rem;">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3062/3062634.png" alt="Libros"
+                        class="card-img-top">
+                    <div class="card-body">
+                        <h4 class="card-title">Libros</h4>
+                        <a href="app/Views/libros.php">
+                            <button>Ir a Libros</button>
+                        </a>
+                    </div>
+                </div>
+                <div class="card" style="width: 18rem;">
+                    <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="Personas"
+                        class="card-img-top">
+                    <div class="card-body">
+                        <h4 class="card-title">Personas</h4>
+                        <a href="app/Views/personas.php">
+                            <button>Ir a Personas</button>
+                        </a>
+                    </div>
+                </div>
+                <div class="card" style="width: 18rem;">
+                    <img src="https://cdn-icons-png.flaticon.com/512/684/684908.png" alt="Reservas"
+                        class="card-img-top">
+                    <div class="card-body">
+                        <h4 class="card-title">Reservas</h4>
+                        <a href="app/Views/reservas.php">
+                            <button>Ir a Reservas</button>
+                        </a>
+                    </div>
+                </div>
+                <div class="card" style="width: 18rem;">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1828/1828919.png" alt="Reportes"
+                        class="card-img-top">
+                    <div class="card-body">
+                        <h4 class="card-title">Reportes</h4>
+                        <a href="app/Views/reportes.php">
+                            <button>Ir a Reportes</button>
+                        </a>
+                    </div>
+                </div>

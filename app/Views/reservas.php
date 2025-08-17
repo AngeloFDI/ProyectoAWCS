@@ -11,13 +11,15 @@
 
 <body>
     <nav class="navbar-main">
-        <a href="../../index.php">Inicio</a>
-        <a href="computadoras.php">Computadoras</a>
-        <a href="tabletas.php">Tabletas</a>
-        <a href="libros.php">Libros</a>
-        <a href="personas.php">Personas</a>
-        <a href="reservas.php" class="active">Reservas</a>
-        <a href="reportes.php">Reportes</a>
+        <span style="float:right;">Bienvenido, <?= htmlspecialchars($usuario['nombre']) ?></span>
+        <a href="index.php?controller=home&action=index">Inicio</a>
+        <a href="index.php?controller=computadoras&action=index">Computadoras</a>
+        <a href="index.php?controller=tabletas&action=index">Tabletas</a>
+        <a href="index.php?controller=libros&action=index">Libros</a>
+        <a href="index.php?controller=personas&action=index">Personas</a>
+        <a href="index.php?controller=reserva&action=index" class="active">Reservas</a>
+        <a href="index.php?controller=reportes&action=index">Reportes</a>
+        <a href="index.php?controller=auth&action=logout"><button>Cerrar sesión</button></a>
     </nav>
     <section>
         <h1 id="titulo">Reservas</h1>
