@@ -5,16 +5,18 @@ class AuthController {
     // Mostrar formulario de login
     public function login_form() {
         $mensaje = isset($_GET['error']) ? $_GET['error'] : '';
+        define('IN_APP', true);
         include(__DIR__ . '/../Views/login.php');
     }
 
     // Mostrar formulario de registro
     public function register_form() {
         $mensaje = isset($_GET['error']) ? $_GET['error'] : '';
+        define('IN_APP', true);
         include(__DIR__ . '/../Views/register.php');
     }
-    
-    // Procesar login de usuario
+
+    // Procesar login de usuario clásico (uso no AJAX)
     public function login() {
         require_once(__DIR__ . '/../config/db.php');
         $conn = Database::connect();
@@ -45,7 +47,40 @@ class AuthController {
             header("Location: index.php?controller=auth&action=login_form&error=" . urlencode('Usuario no encontrado o inactivo'));
             exit();
         }
-        exit();
+    }
+
+    // Procesar login via AJAX
+    public function login_ajax() {
+        require_once(__DIR__ . '/../config/db.php');
+        $conn = Database::connect();
+
+        $correo = $conn->real_escape_string($_POST['correo'] ?? '');
+        $contrasena = $_POST['contrasena'] ?? '';
+        $query = "SELECT * FROM usuario WHERE correo='$correo' AND estado_usuario=1";
+        $result = $conn->query($query);
+
+        header('Content-Type: application/json');
+        if ($result && $result->num_rows == 1) {
+            $user = $result->fetch_assoc();
+            if (password_verify($contrasena, $user['contrasena'])) {
+                $_SESSION['usuario'] = [
+                    'id' => $user['id_usuario'],
+                    'nombre' => $user['nombre'],
+                    'rol' => $user['rol']
+                ];
+                echo json_encode([
+                    'success' => true,
+                    'rol' => $user['rol']
+                ]);
+                return;
+            } else {
+                echo json_encode(['success' => false, 'msg' => 'Contraseña incorrecta']);
+                return;
+            }
+        } else {
+            echo json_encode(['success' => false, 'msg' => 'Usuario no encontrado o inactivo']);
+            return;
+        }
     }
 
     // Procesar registro de usuario
@@ -91,7 +126,7 @@ class AuthController {
                     'nombre' => $user['nombre'],
                     'rol' => $user['rol']
                 ];
-                header("Location: index.php");
+                header("Location: index.php?controller=home&action=index&tipo=estudiante");
                 exit();
             }
         } else {
@@ -108,4 +143,3 @@ class AuthController {
         exit();
     }
 }
-?>

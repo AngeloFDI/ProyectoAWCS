@@ -15,6 +15,7 @@ class HomeController
         $usuario = $_SESSION['usuario'];
 
         // Incluye la vista del dashboard
+        define('IN_APP', true);
         include(__DIR__ . '/../Views/home.php');
     }
 }

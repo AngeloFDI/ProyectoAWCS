@@ -1,3 +1,8 @@
+<?php
+if (!defined('IN_APP')) {
+    die('Acceso denegado.');
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -12,11 +17,8 @@
 <body>
     <section class="login-section">
         <h1>Iniciar Sesión</h1>
-        <?php if($mensaje): ?>
-        <p style="color:red;"><?= $mensaje ?></p>
-        <?php endif; ?>
-
-        <form method="POST" action="index.php?controller=auth&action=login" class="login-form">
+        <div id="login-alert"></div>
+        <form method="POST" id="login-form" class="login-form">
             <input type="email" name="correo" placeholder="Correo"><br><br>
             <input type="password" name="contrasena" placeholder="Contraseña"><br><br>
             <button type="submit">Ingresar</button>
@@ -28,6 +30,8 @@
         <i class="bi bi-whatsapp"> +506 71234567</i><br><br>
         <i class="bi bi-book"> Biblioteca Liceo San José desde 1995</i>
     </footer>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/login.js"></script>
 </body>
 
 </html>

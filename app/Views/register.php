@@ -1,4 +1,8 @@
-
+<?php
+if (!defined('IN_APP')) {
+    die('Acceso denegado.');
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>

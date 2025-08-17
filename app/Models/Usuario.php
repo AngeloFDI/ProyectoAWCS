@@ -15,4 +15,3 @@ class Usuario {
     }
     // Agregar Métodos CRUD: guardar(), actualizar(), eliminar(), buscarPorId(), etc.
 }
-?>

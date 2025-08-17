@@ -14,4 +14,3 @@ class Database {
         return $conn;
     }
 }
-?>
