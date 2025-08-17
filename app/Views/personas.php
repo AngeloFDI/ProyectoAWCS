@@ -11,13 +11,13 @@
 
 <body>
   <nav class="navbar-main">
-    <a href="index.html">Inicio</a>
-    <a href="computadoras.html">Computadoras</a>
-    <a href="tabletas.html">Tabletas</a>
-    <a href="libros.html">Libros</a>
-    <a href="personas.html" class="active">Personas</a>
-    <a href="reservas.html">Reservas</a>
-    <a href="reportes.html">Reportes</a>
+    <a href="../../index.php">Inicio</a>
+    <a href="computadoras.php">Computadoras</a>
+    <a href="tabletas.php">Tabletas</a>
+    <a href="libros.php">Libros</a>
+    <a href="personas.php" class="active">Personas</a>
+    <a href="reservas.php">Reservas</a>
+    <a href="reportes.php">Reportes</a>
   </nav>
   <section>
     <h1 id="titulo">Personas</h1>

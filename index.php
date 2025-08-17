@@ -4,20 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <title>Inventario Biblioteca</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
 
 </head>
 
 <body>
     <nav class="navbar-main">
-        <a href="index.html" class="active">Inicio</a>
-        <a href="computadoras.html">Computadoras</a>
-        <a href="tabletas.html">Tabletas</a>
-        <a href="libros.html">Libros</a>
-        <a href="personas.html">Personas</a>
-        <a href="reservas.html">Reservas</a>
-        <a href="reportes.html">Reportes</a>
+        <a href="index.php" class="active">Inicio</a>
+        <a href="app/Views/computadoras.php">Computadoras</a>
+        <a href="app/Views/tabletas.php">Tabletas</a>
+        <a href="app/Views/libros.php">Libros</a>
+        <a href="app/Views/personas.php">Personas</a>
+        <a href="app/Views/reservas.php">Reservas</a>
+        <a href="app/Views/reportes.php">Reportes</a>
     </nav>
     <section>
         <h1 id="titulo">Biblioteca del Liceo San José</h1>
@@ -29,7 +29,7 @@
                         alt="Computadoras" class="card-img-top">
                     <div class="card-body">
                         <h4 class="card-title">Computadoras</h4>
-                        <a href="computadoras.html">
+                        <a href="app/Views/computadoras.php">
                             <button>Ir a Computadoras</button>
                         </a>
                     </div>
@@ -39,7 +39,7 @@
                         class="card-img-top">
                     <div class="card-body">
                         <h4 class="card-title">Tabletas</h4>
-                        <a href="tabletas.html">
+                        <a href="app/Views/tabletas.php">
                             <button>Ir a Tabletas</button>
                         </a>
                     </div>
@@ -49,7 +49,7 @@
                         class="card-img-top">
                     <div class="card-body">
                         <h4 class="card-title">Libros</h4>
-                        <a href="libros.html">
+                        <a href="app/Views/libros.php">
                             <button>Ir a Libros</button>
                         </a>
                     </div>
@@ -59,7 +59,7 @@
                         class="card-img-top">
                     <div class="card-body">
                         <h4 class="card-title">Personas</h4>
-                        <a href="personas.html">
+                        <a href="app/Views/personas.php">
                             <button>Ir a Personas</button>
                         </a>
                     </div>
@@ -69,7 +69,7 @@
                         class="card-img-top">
                     <div class="card-body">
                         <h4 class="card-title">Reservas</h4>
-                        <a href="reservas.html">
+                        <a href="app/Views/reservas.php">
                             <button>Ir a Reservas</button>
                         </a>
                     </div>
@@ -79,7 +79,7 @@
                         class="card-img-top">
                     <div class="card-body">
                         <h4 class="card-title">Reportes</h4>
-                        <a href="reportes.html">
+                        <a href="app/Views/reportes.php">
                             <button>Ir a Reportes</button>
                         </a>
                     </div>

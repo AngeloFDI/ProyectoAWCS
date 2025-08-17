@@ -5,19 +5,19 @@
     <meta charset="UTF-8">
     <title>Reservas</title>
     <link rel="stylesheet" href="../css/style.css">
-      <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
 
 </head>
 
 <body>
     <nav class="navbar-main">
-        <a href="index.html">Inicio</a>
-        <a href="computadoras.html">Computadoras</a>
-        <a href="tabletas.html">Tabletas</a>
-        <a href="libros.html">Libros</a>
-        <a href="personas.html">Personas</a>
-        <a href="reservas.html" class="active">Reservas</a>
-        <a href="reportes.html">Reportes</a>
+        <a href="../../index.php">Inicio</a>
+        <a href="computadoras.php">Computadoras</a>
+        <a href="tabletas.php">Tabletas</a>
+        <a href="libros.php">Libros</a>
+        <a href="personas.php">Personas</a>
+        <a href="reservas.php" class="active">Reservas</a>
+        <a href="reportes.php">Reportes</a>
     </nav>
     <section>
         <h1 id="titulo">Reservas</h1>

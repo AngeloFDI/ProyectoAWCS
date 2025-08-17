@@ -3,30 +3,30 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Tabletas</title>
+  <title>Computadoras</title>
   <link rel="stylesheet" href="../css/style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
 
 </head>
 
 <body>
   <nav class="navbar-main">
-    <a href="index.html">Inicio</a>
-    <a href="computadoras.html">Computadoras</a>
-    <a href="tabletas.html" class="active">Tabletas</a>
-    <a href="libros.html">Libros</a>
-    <a href="personas.html">Personas</a>
-    <a href="reservas.html">Reservas</a>
-    <a href="reportes.html">Reportes</a>
+      <a href="../../index.php">Inicio</a>
+      <a href="computadoras.php" class="active">Computadoras</a>
+      <a href="tabletas.php">Tabletas</a>
+      <a href="libros.php">Libros</a>
+      <a href="personas.php">Personas</a>
+      <a href="reservas.php">Reservas</a>
+      <a href="reportes.php">Reportes</a>
   </nav>
   <section>
-    <h1 id="titulo">Tabletas</h1>
+    <h1 id="titulo">Computadoras</h1>
     <div class="container">
       <nav class="navbar navbar-light bg-light">
         <form class="form-inline search-container">
-          <input class="form-control" type="search" placeholder="Buscar tableta" aria-label="Search">
+          <input class="form-control" type="search" placeholder="Buscar computadora" aria-label="Search">
           <button class="btn btn-outline-success" type="submit">Buscar</button>
-          <button id="gestionar"> Gestionar Tabletas </button>
+          <button id="gestionar"> Gestionar Computadoras </button>
         </form>
       </nav>
     </div>
@@ -34,15 +34,16 @@
 
   <section class="cards-container">
     <div class="card" style="width: 18rem;">
-      <img src="https://m.media-amazon.com/images/I/61d46oYQgdL._AC_SL1500_.jpg"
+      <img src="https://m.media-amazon.com/images/I/815uX7wkOZS._AC_SL1500_.jpg"
         class="card-img-top" alt="80px">
       <div class="card-body">
-        <h4 class="card-title">Samsung Galaxy Tab A9+</h4>
+        <h4 class="card-title">Laptop HP</h4>
         <ul class="Especificaciones">
-          <li>Sistema Operativo: Android</li>
+          <li>Sistema Operativo: Windows 11</li>
+          <li>Intel Celeron N4020</li>
           <li>RAM: 4GB</li>
           <li>Almacenamiento: 64GB</li>
-          <li>Pantalla: 11"</li>
+          <li>Pantalla: 14" Full HD</li>
         </ul>
         <div class="card-body">
           <button> Reservar </button>
@@ -53,15 +54,16 @@
 
   
     <div class="card" style="width: 18rem;">
-      <img src="https://m.media-amazon.com/images/I/61d46oYQgdL._AC_SL1500_.jpg"
+      <img src="https://m.media-amazon.com/images/I/71ox5Ij+88L._AC_SL1500_.jpg"
         class="card-img-top" alt="80px">
       <div class="card-body">
-        <h4 class="card-title">Samsung Galaxy Tab A9+</h4>
+        <h4 class="card-title">Laptop BLUEING</h4>
         <ul class="Especificaciones">
-          <li>Sistema Operativo: Android</li>
-          <li>RAM: 4GB</li>
-          <li>Almacenamiento: 64GB</li>
-          <li>Pantalla: 11"</li>
+          <li>Sistema Operativo: Windows 11</li>
+          <li>Intel Quad-Core N5095</li>
+          <li>RAM: 16GB</li>
+          <li>Almacenamiento: 512GB SSD</li>
+          <li>Pantalla: 15.6" Full HD</li>
         </ul>
         <div class="card-body">
           <button> Reservar </button>
@@ -72,15 +74,16 @@
 
   
     <div class="card" style="width: 18rem;">
-      <img src="https://m.media-amazon.com/images/I/61d46oYQgdL._AC_SL1500_.jpg"
+      <img src="https://m.media-amazon.com/images/I/61bjBghW2IL._AC_SL1480_.jpg"
         class="card-img-top" alt="80px">
       <div class="card-body">
-        <h4 class="card-title">Samsung Galaxy Tab A9+</h4>
+        <h4 class="card-title">Laptop SGIN</h4>
         <ul class="Especificaciones">
-          <li>Sistema Operativo: Android</li>
+          <li>Sistema Operativo: Windows 11</li>
+          <li>Celeron N4000</li>
           <li>RAM: 4GB</li>
-          <li>Almacenamiento: 64GB</li>
-          <li>Pantalla: 11"</li>
+          <li>Almacenamiento: 128 GB</li>
+          <li>Pantalla: 15.6" Full HD</li>
         </ul>
         <div class="card-body">
           <button> Reservar </button>
@@ -88,7 +91,7 @@
       </div>
     </div>
   </section>
-<footer> 
+  <footer> 
       <i class="bi bi-facebook">  BiblioCra San José</i><br><br>
       <i class="bi bi-whatsapp">  +506 71234567</i><br><br>
       <i class="bi bi-book">  Biblioteca Liceo San José desde 1995</i>
