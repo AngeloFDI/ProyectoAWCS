@@ -13,6 +13,6 @@ class Usuario {
         }
         return $usuarios;
     }
-    // Métodos CRUD: guardar(), actualizar(), eliminar(), buscarPorId(), etc.
+    // Agregar Métodos CRUD: guardar(), actualizar(), eliminar(), buscarPorId(), etc.
 }
 ?>

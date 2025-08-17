@@ -6,6 +6,6 @@ class UsuarioController {
         $usuarios = Usuario::obtenerTodos();
         include(__DIR__ . '/../Views/personas.php');
     }
-    // Métodos create, update, delete
+    // Agregar Métodos create, update, delete
 }
 ?>

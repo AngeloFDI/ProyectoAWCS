@@ -6,7 +6,7 @@
     <title>Inventario Biblioteca</title>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body>
@@ -24,13 +24,48 @@
     <section>
         <h1 id="titulo">Biblioteca del Liceo San José</h1>
         <div class="container">
-            <p>Bienvenido/a. Click para ir a una categoría:</p>
+            <div id="biblioCarousel" class="carousel slide mx-auto mb-5" data-bs-ride="carousel"
+                style="max-width:2200px; width:100%;">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#biblioCarousel" data-bs-slide-to="0" class="active"
+                        aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#biblioCarousel" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#biblioCarousel" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner" style="border-radius: 18px;">
+                    <div class="carousel-item active">
+                        <img src="https://lsjbbtc.wordpress.com/wp-content/uploads/2021/03/p9110108.jpg?w=640" class="d-block mx-auto"
+                            alt="Imagen1" style="width:100%; height:1000px; object-fit:contain; background:#fff;">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://lsjbbtc.wordpress.com/wp-content/uploads/2021/03/p9110108.jpg?w=640" class="d-block mx-auto"
+                            alt="Imagen2" style="width:100%; height:1000px; object-fit:contain; background:#fff;">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://lsjbbtc.wordpress.com/wp-content/uploads/2021/03/p9110108.jpg?w=640" class="d-block mx-auto"
+                            alt="Imagen3" style="width:100%; height:1000px; object-fit:contain; background:#fff;">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#biblioCarousel"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Anterior</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#biblioCarousel"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Siguiente</span>
+                </button>
+            </div>
     </section>
     <footer>
         <i class="bi bi-facebook"> BiblioCra San José</i><br><br>
         <i class="bi bi-whatsapp"> +506 71234567</i><br><br>
         <i class="bi bi-book"> Biblioteca Liceo San José desde 1995</i>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

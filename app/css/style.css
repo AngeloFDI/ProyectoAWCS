@@ -213,3 +213,11 @@ footer{
   background-color: #5988ee31;
   color: darkblue;
 }
+
+#biblioCarousel .carousel-inner {
+    background: #f1f5ff;
+    border-radius: 18px;
+}
+#biblioCarousel img {
+    padding: 15px 0;
+}
