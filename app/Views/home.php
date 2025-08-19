@@ -24,15 +24,16 @@ if (!defined('IN_APP')) {
         <?php if ($usuario['rol'] === 'personal'): ?>
             <a href="index.php?controller=computadoras&action=index">Computadoras</a>
             <a href="index.php?controller=tabletas&action=index">Tabletas</a>
-            <a href="index.php?controller=libros&action=index">Libros</a>
+            <a href="index.php?controller=recursos&action=libros">Libros</a>
             <a href="index.php?controller=personas&action=index">Usuarios</a>
             <a href="index.php?controller=reserva&action=index">Reservas</a>
             <a href="index.php?controller=reportes&action=index">Reportes</a>
+            <a href="index.php?controller=recursos&action=index">Recursos</a>
         <?php else: ?>
         <!-- Menú para ESTUDIANTE -->
             <a href="index.php?controller=computadoras&action=index">Computadoras</a>
             <a href="index.php?controller=tabletas&action=index">Tabletas</a>
-            <a href="index.php?controller=libros&action=index">Libros</a>
+            <a href="index.php?controller=recursos&action=libros">Libros</a>
             <a href="index.php?controller=reserva&action=index">Reservas</a>
         <?php endif; ?>
         <a href="index.php?controller=perfil&action=editar">Mi Perfil</a>

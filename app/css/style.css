@@ -10,22 +10,26 @@ body {
 
 }
 
-h1, #titulo, h1#titulo {
-    color: #fff !important;
-    background: #001489;                 /* Azul fuerte y oscuro para contraste */
-    font-size: 45px;
-    padding: 22px 0 22px 0;
-    margin: 0;
-    width: 100vw;                        /* OCUPA TODO EL ANCHO DE LA VENTANA */
-    position: relative;
-    left: 50%;
-    right: 50%;
-    transform: translateX(-50%);
-    text-align: center !important;
-    border-radius: 0 0 10px 10px;
-    box-shadow: 0 3px 14px #001b4433;
-    letter-spacing: 1px;
-    z-index: 1;
+h1,
+#titulo,
+h1#titulo {
+  color: #fff !important;
+  background: #001489;
+  /* Azul fuerte y oscuro para contraste */
+  font-size: 45px;
+  padding: 22px 0 22px 0;
+  margin: 0;
+  width: 100vw;
+  /* OCUPA TODO EL ANCHO DE LA VENTANA */
+  position: relative;
+  left: 50%;
+  right: 50%;
+  transform: translateX(-50%);
+  text-align: center !important;
+  border-radius: 0 0 10px 10px;
+  box-shadow: 0 3px 14px #001b4433;
+  letter-spacing: 1px;
+  z-index: 1;
 }
 
 button {
@@ -208,8 +212,8 @@ th {
 }
 
 .navbar-main span {
-    color: #fff;
-    font-weight: bold;
+  color: #fff;
+  font-weight: bold;
 }
 
 .navbar-main a {
@@ -238,11 +242,12 @@ footer {
 }
 
 #biblioCarousel .carousel-inner {
-    background: #f1f5ff;
-    border-radius: 18px;
+  background: #f1f5ff;
+  border-radius: 18px;
 }
+
 #biblioCarousel img {
-    padding: 15px 0;
+  padding: 15px 0;
 }
 
 .login-section {
@@ -312,4 +317,147 @@ footer {
 .register-form button {
   margin-top: 12px;
   font-size: 18px;
+}
+
+.hero-section {
+  background: #764ba2;
+  color: white;
+  padding: 3rem 0;
+  margin-bottom: 2rem;
+}
+
+.search-container {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 1.5rem;
+  backdrop-filter: blur(10px);
+}
+
+.book-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: none;
+  border-radius: 15px;
+  overflow: hidden;
+  height: 100%;
+}
+
+.book-image {
+  height: 250px;
+  object-fit: cover;
+  background: linear-gradient(45deg, #f0f0f0, #e0e0e0);
+}
+
+.book-image-placeholder {
+  height: 250px;
+  background: linear-gradient(45deg, #f8f9fa, #e9ecef);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6c757d;
+}
+
+.availability-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 10;
+}
+
+.btn-reserve {
+  background: linear-gradient(45deg, #28a745, #3ba051);
+  border: none;
+  color: white;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+}
+
+.btn-reserve:disabled {
+  background: #50d672;
+  transform: none;
+  box-shadow: none;
+}
+
+.stats-card {
+  background:  #764ba2;
+  color: white;
+  border-radius: 15px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.no-results {
+  text-align: center;
+  padding: 3rem;
+  color: #6c757d;
+}
+
+.no-results i {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.form-container {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+.form-group {
+    margin-bottom: 1.5rem;
+}
+.form-label {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+.form-control {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid #e9ecef;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+.form-control:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,0.25);
+}
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    padding: 0.75rem 2rem;
+    font-weight: 600;
+}
+.btn-secondary {
+    background-color: #6c757d;
+    border-color: #6c757d;
+    padding: 0.75rem 2rem;
+    font-weight: 600;
+}
+.btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+.required {
+    color: #dc3545;
+}
+.image-preview {
+    max-width: 200px;
+    max-height: 200px;
+    border: 2px dashed #dee2e6;
+    border-radius: 5px;
+    padding: 1rem;
+    text-align: center;
+    margin-top: 0.5rem;
+}
+.image-preview img {
+    max-width: 100%;
+    max-height: 150px;
+    border-radius: 5px;
 }

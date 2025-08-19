@@ -20,10 +20,11 @@ if (!defined('IN_APP')) {
         <a href="index.php?controller=home&action=index">Inicio</a>
         <a href="index.php?controller=computadoras&action=index" class="active">Computadoras</a>
         <a href="index.php?controller=tabletas&action=index">Tabletas</a>
-        <a href="index.php?controller=libros&action=index">Libros</a>
+        <a href="index.php?controller=recursos&action=libros">Libros</a>
         <a href="index.php?controller=personas&action=index">Personas</a>
         <a href="index.php?controller=reserva&action=index">Reservas</a>
         <a href="index.php?controller=reportes&action=index">Reportes</a>
+        <a href="index.php?controller=recursos&action=index">Recursos</a>
         <a href="index.php?controller=auth&action=logout"><button>Cerrar sesión</button></a>
     </nav>
   <section>
