@@ -3,7 +3,7 @@ class Database {
     public static function connect() {
         $host = 'localhost';
         $user = 'root';
-        $pass = 'Base.2005'; // recuerden cambiar la contraeña por la de ustedes
+        $pass = ''; // recuerden cambiar la contraeña por la de ustedes
         $db   = 'proyectoawcs'; // Cambia si tu base lleva otro nombre
 
         $conn = new mysqli($host, $user, $pass, $db);
@@ -14,3 +14,5 @@ class Database {
         return $conn;
     }
 }
+
+// esto lo quité del archivo config.inc.php: $cfg['Servers'][$i]['controluser'] = 'pma';

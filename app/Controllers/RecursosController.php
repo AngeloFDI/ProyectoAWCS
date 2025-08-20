@@ -178,4 +178,6 @@ class RecursosController {
         define('IN_APP', true);
         include(__DIR__ . '/../Views/tabletas.php');
     }
+
+    
 }
