@@ -33,12 +33,12 @@ h1#titulo {
 }
 
 button {
-  background-color: darkblue;
+  background-color: rgb(67, 50, 221);
   color: white;
   padding: 10px 15px;
   margin: 5px;
   border: none;
-  border-radius: 8px;
+  border-radius: 15px;
   cursor: pointer;
   font-weight: bold;
 }
@@ -69,6 +69,16 @@ button:hover {
 
 #gestionar {
   background-color: #52b4c5;
+  color: white;
+  padding: 10px 15px;
+  margin: 10px;
+  align-items: flex-end;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+#volver-inicio {
+  background-color: #5eb87c;
   color: white;
   padding: 10px 15px;
   margin: 10px;
@@ -221,24 +231,35 @@ th {
   text-decoration: none;
   font-weight: bold;
   font-size: 17px;
-  margin: 0 18px;
-  padding: 7px 18px;
-  border-radius: 7px;
+  margin: 0 10px;   /* antes era 18px */
+  padding: 7px 12px; /* antes era 18px */
+  border-radius: 5px;
   transition: background 0.18s;
+  display: flex;       /* para centrar ícono y texto si hay */
+  align-items: center; /* centra verticalmente */
+  gap: 6px;            /* espacio entre ícono y texto (si aplica) */
 }
 
+/* Pero los enlaces que SOLO tienen ícono (perfil y logout) 
+   que no ocupen tanto espacio */
+.navbar-main a.icon-only {
+  font-size: 20px;     /* tamaño más grande para los íconos */
+  padding: 6px 8px;    /* mucho más compacto */
+  margin: 0 6px;
+}
 .navbar-main a:hover,
 .navbar-main a.active {
   background: #52b4c5;
   color: #fff;
 }
 
-footer {
-  margin-top: auto;
-  text-align: center;
+footer{
+  text-align: left;
+  font-weight: bold;
   padding: 20px;
-  background-color: #dbe9ff;
-  color: #052263;
+  background-color: #6432815e;
+  color: #001489;
+  margin-top: 40px;
 }
 
 #biblioCarousel .carousel-inner {

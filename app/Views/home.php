@@ -15,30 +15,30 @@ if (!defined('IN_APP')) {
 </head>
 
 <body>
-    <nav class="navbar-main">
-        <span style="float:right; color: #fff; font-weight: bold;">
-            Bienvenido, <?= htmlspecialchars($usuario['nombre']) ?> (<?= htmlspecialchars($usuario['rol']) ?>)
-        </span>
-        <a href="index.php?controller=home&action=index" class="active">Inicio</a>
-        <!-- Menú para PERSONAL -->
-        <?php if ($usuario['rol'] === 'personal'): ?>
-            <a href="index.php?controller=computadoras&action=index">Computadoras</a>
-            <a href="index.php?controller=tabletas&action=index">Tabletas</a>
-            <a href="index.php?controller=recursos&action=libros">Libros</a>
-            <a href="index.php?controller=personas&action=index">Usuarios</a>
-            <a href="index.php?controller=reserva&action=index">Reservas</a>
-            <a href="index.php?controller=reportes&action=index">Reportes</a>
-            <a href="index.php?controller=recursos&action=index">Recursos</a>
-        <?php else: ?>
+<nav class="navbar-main">
+    <span style="float:right; color: #fff; font-weight: bold;">
+        Bienvenido, <?= htmlspecialchars($usuario['nombre']) ?>
+    </span>
+    <a href="index.php?controller=home&action=index" class="active">Inicio</a>
+    <!-- Menú para PERSONAL -->
+    <?php if ($usuario['rol'] === 'personal'): ?>
+        <a href="index.php?controller=computadoras&action=index">Computadoras</a>
+        <a href="index.php?controller=tabletas&action=index">Tabletas</a>
+        <a href="index.php?controller=recursos&action=libros">Libros</a>
+        <a href="index.php?controller=personas&action=index">Usuarios</a>
+        <a href="index.php?controller=reserva&action=index">Reservas</a>
+        <a href="index.php?controller=reportes&action=index">Reportes</a>
+        <a href="index.php?controller=recursos&action=index">Recursos</a>
+    <?php else: ?>
         <!-- Menú para ESTUDIANTE -->
-            <a href="index.php?controller=computadoras&action=index">Computadoras</a>
-            <a href="index.php?controller=tabletas&action=index">Tabletas</a>
-            <a href="index.php?controller=recursos&action=libros">Libros</a>
-            <a href="index.php?controller=reserva&action=index">Reservas</a>
-        <?php endif; ?>
-        <a href="index.php?controller=perfil&action=editar">Mi Perfil</a>
-        <a href="index.php?controller=auth&action=logout"><button>Cerrar sesión</button></a>
-    </nav>
+        <a href="index.php?controller=computadoras&action=index">Computadoras</a>
+        <a href="index.php?controller=tabletas&action=index">Tabletas</a>
+        <a href="index.php?controller=recursos&action=libros">Libros</a>
+        <a href="index.php?controller=reserva&action=index">Reservas</a>
+    <?php endif; ?>
+    <a href="index.php?controller=perfil&action=editar">Mi Perfil</a>
+    <a href="index.php?controller=auth&action=logout"><button>Cerrar sesión</button></a>
+</nav>
     <h1 id="titulo">Biblioteca del Liceo San José</h1>
     <section>
         <div class="container">
@@ -146,7 +146,7 @@ if (!defined('IN_APP')) {
             </div>
         </div>
     </section>
-    <footer>
+    <footer >
         <i class="bi bi-facebook"> BiblioCra San José</i><br><br>
         <i class="bi bi-whatsapp"> +506 71234567</i><br><br>
         <i class="bi bi-book"> Biblioteca Liceo San José desde 1995</i>

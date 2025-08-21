@@ -30,7 +30,7 @@ if (!defined('IN_APP')) { die('Acceso denegado.'); }
             <button type="submit">Guardar Cambios</button>
         </form>
         <div style="margin-top: 20px;">
-            <a href="index.php?controller=home&action=index">Volver al inicio</a>
+            <a href="index.php?controller=home&action=index" id="volver-inicio">Volver al inicio</a>
         </div>
     </section>
     <script src="js/jquery-3.7.1.min.js"></script>
