@@ -10,7 +10,7 @@ class PerfilController
         }
         require_once(__DIR__ . '/../config/db.php');
         $conn = Database::connect();
-        $id = $_SESSION['usuario']['id'];
+        $id = $_SESSION['usuario']['id_usuario'];
         $sql = "SELECT * FROM usuario WHERE id_usuario=$id";
         $result = $conn->query($sql);
         $usuario = $result->fetch_assoc();
@@ -27,7 +27,7 @@ class PerfilController
         }
         require_once(__DIR__ . '/../config/db.php');
         $conn = Database::connect();
-        $id = $_SESSION['usuario']['id'];
+        $id = $_SESSION['usuario']['id_usuario'];
 
         $nombre = trim($conn->real_escape_string($_POST['nombre'] ?? ''));
         $apellido = trim($conn->real_escape_string($_POST['apellido'] ?? ''));

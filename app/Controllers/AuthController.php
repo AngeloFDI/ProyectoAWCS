@@ -33,9 +33,10 @@ class AuthController {
             // Valida password (usa password_verify si la contraseña está hasheada)
             if (password_verify($contrasena, $user['contrasena'])) {
                 $_SESSION['usuario'] = [
-                    'id' => $user['id_usuario'],
+                    'id_usuario' => $user['id_usuario'],
                     'nombre' => $user['nombre'],
-                    'rol' => $user['rol']
+                    'rol' => $user['rol'],
+                    'correo' => $user['correo']
                 ];
                 header("Location: index.php");
                 exit();
@@ -64,9 +65,10 @@ class AuthController {
             $user = $result->fetch_assoc();
             if (password_verify($contrasena, $user['contrasena'])) {
                 $_SESSION['usuario'] = [
-                    'id' => $user['id_usuario'],
+                    'id_usuario' => $user['id_usuario'],
                     'nombre' => $user['nombre'],
-                    'rol' => $user['rol']
+                    'rol' => $user['rol'],
+                    'correo' => $user['correo']
                 ];
                 echo json_encode([
                     'success' => true,
@@ -122,7 +124,7 @@ class AuthController {
             $res2 = $conn->query("SELECT * FROM usuario WHERE id_usuario=$user_id LIMIT 1");
             if($user = $res2->fetch_assoc()) {
                 $_SESSION['usuario'] = [
-                    'id' => $user['id_usuario'],
+                    'id_usuario' => $user['id_usuario'],
                     'nombre' => $user['nombre'],
                     'rol' => $user['rol']
                 ];

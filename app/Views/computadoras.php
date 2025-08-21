@@ -39,9 +39,7 @@ if (!defined('IN_APP')) {
     <div class="container">
       <div class="row align-items-center">
         <div class="col-md-12 text-center">
-          <h1 class="display-4 fw-bold mb-3">
-            <i class="bi bi-laptop"></i> Catálogo de Computadoras
-          </h1>
+          <h1 class="display-4 fw-bold mb-3"> Catálogo de Computadoras</h1>
           <p class="lead mb-0">Consulta las computadoras disponibles para préstamo</p>
         </div>
       </div>
@@ -229,24 +227,69 @@ if (!defined('IN_APP')) {
 
     // Función global para reservar computadora
     function reservarComputadora(idComputadora, nombreComputadora) {
+      // Obtener la fecha actual
+      const fechaActual = new Date().toISOString().split('T')[0];
+      
       Swal.fire({
         title: 'Reservar Computadora',
-        text: `¿Deseas reservar "${nombreComputadora}"?`,
+        html: `
+          <p>¿Deseas reservar "${nombreComputadora}"?</p>
+          <div class="form-group">
+            <label for="fecha-reserva">Fecha de reserva:</label>
+            <input type="date" id="fecha-reserva" class="form-control" value="${fechaActual}" min="${fechaActual}">
+          </div>
+        `,
         icon: 'question',
         showCancelButton: true,
         confirmButtonColor: '#28a745',
         cancelButtonColor: '#6c757d',
         confirmButtonText: 'Sí, reservar',
-        cancelButtonText: 'Cancelar'
+        cancelButtonText: 'Cancelar',
+        preConfirm: () => {
+          const fechaReserva = document.getElementById('fecha-reserva').value;
+          if (!fechaReserva) {
+            Swal.showValidationMessage('Por favor selecciona una fecha');
+            return false;
+          }
+          return fechaReserva;
+        }
       }).then((result) => {
         if (result.isConfirmed) {
-          // Aquí se implementaría la lógica de reserva
-          Swal.fire({
-            icon: 'success',
-            title: '¡Reserva exitosa!',
-            text: `Has reservado "${nombreComputadora}"`,
-            showConfirmButton: false,
-            timer: 2000
+          const fechaReserva = result.value;
+          
+          // Realizar la reserva
+          $.post('index.php?controller=reserva&action=crear', {
+            id_recurso: idComputadora,
+            id_usuario: <?= $usuario['id_usuario'] ?>,
+            fecha_reserva: fechaReserva
+          }, function(resp) {
+            try {
+              var r = (typeof resp === "object") ? resp : JSON.parse(resp);
+              if (r.success) {
+                Swal.fire({
+                  icon: 'success',
+                  title: '¡Reserva exitosa!',
+                  text: r.msg,
+                  showConfirmButton: false,
+                  timer: 2000
+                }).then(() => {
+                  // Recargar las computadoras para actualizar disponibilidad
+                  cargarComputadoras();
+                });
+              } else {
+                Swal.fire({
+                  icon: 'error',
+                  title: 'Error',
+                  text: r.msg
+                });
+              }
+            } catch (e) {
+              Swal.fire({
+                icon: 'error',
+                title: 'Error inesperado',
+                text: 'Ocurrió un error al procesar la reserva'
+              });
+            }
           });
         }
       });

@@ -39,7 +39,16 @@ if (!defined('IN_APP')) {
     <a href="index.php?controller=perfil&action=editar">Mi Perfil</a>
     <a href="index.php?controller=auth&action=logout"><button>Cerrar sesión</button></a>
 </nav>
-    <h1 id="titulo">Biblioteca del Liceo San José</h1>
+<section class="hero-section">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-12 text-center">
+          <h1 class="display-4 fw-bold mb-3"> Biblioteca del Liceo San José</h1>
+          <p class="lead mb-0">Todo el material bibliográfico y los equipos tecnológicos disponibles para préstamo</p>
+        </div>
+      </div>
+    </div>
+  </section>
     <section>
         <div class="container">
             <div id="biblioCarousel" class="carousel slide mx-auto mb-5" data-bs-ride="carousel"

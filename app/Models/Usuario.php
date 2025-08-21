@@ -48,6 +48,14 @@ class Usuario {
         return $result->fetch_assoc();
     }
 
+    // Buscar usuario por correo
+    public static function buscarPorCorreo($correo) {
+        $db = Database::connect();
+        $correo = $db->real_escape_string($correo);
+        $result = $db->query("SELECT * FROM usuario WHERE correo='$correo'");
+        return $result->fetch_assoc();
+    }
+
     // Actualizar usuario
     public static function actualizar($post) {
         $db = Database::connect();
