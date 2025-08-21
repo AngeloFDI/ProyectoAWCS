@@ -28,8 +28,17 @@ if (!defined('IN_APP')) { die('Acceso denegado.'); }
     <a href="index.php?controller=perfil&action=editar">Mi Perfil</a>
     <a href="index.php?controller=auth&action=logout"><button>Cerrar sesión</button></a>
   </nav>
+  <section class="hero-section">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-12 text-center">
+          <h1 class="display-4 fw-bold mb-3">Gestión de Usuarios</h1>
+          <p class="lead mb-0">Administre los usuarios de la biblioteca</p>
+        </div>
+      </div>
+    </div>
+  </section>
   <section>
-    <h1 id="titulo">Personas</h1>
     <div class="container">
       <button class="btn btn-success mb-2" onclick="window.location='index.php?controller=personas&action=crear_form'">
         <i class="bi bi-person-plus"></i> Crear Usuario

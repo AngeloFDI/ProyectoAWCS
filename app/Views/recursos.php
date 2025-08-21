@@ -28,10 +28,17 @@ if (!defined('IN_APP')) { die('Acceso denegado.'); }
     <a href="index.php?controller=perfil&action=editar">Mi Perfil</a>
     <a href="index.php?controller=auth&action=logout"><button>Cerrar sesión</button></a>
   </nav>
-  
+  <section class="hero-section">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-12 text-center">
+          <h1 class="display-4 fw-bold mb-3">Gestión de Recursos</h1>
+          <p class="lead mb-0">Administre los recursos de la biblioteca</p>
+        </div>
+      </div>
+    </div>
+  </section>
   <section>
-    <h1 id="titulo">Gestión de Recursos</h1>
-    
     <div class="container">
       <!-- Filtros de búsqueda -->
       <div class="card mb-3">

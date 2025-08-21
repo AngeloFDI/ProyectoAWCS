@@ -34,9 +34,7 @@ if (!defined('IN_APP')) { die('Acceso denegado.'); }
     <div class="container">
       <div class="row align-items-center">
         <div class="col-md-12 text-center">
-          <h1 class="display-4 fw-bold mb-3">
-            <i class="bi bi-tablet"></i> Catálogo de Tabletas
-          </h1>
+          <h1 class="display-4 fw-bold mb-3"> Catálogo de Tabletas</h1>
           <p class="lead mb-0">Consulta las tabletas disponibles para préstamo</p>
         </div>
       </div>

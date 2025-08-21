@@ -262,11 +262,11 @@ th {
 }
 
 footer {
-  text-align: left;
+  text-align: center;
   font-weight: bold;
   padding: 20px;
   background-color: #6432815e;
-  color: #001489;
+  color: #764ba2;
   margin-top: 40px;
 }
 
@@ -500,6 +500,3 @@ footer {
   max-height: 150px;
   border-radius: 5px;
 }
-
-/* Gestionar Reservas */
-
