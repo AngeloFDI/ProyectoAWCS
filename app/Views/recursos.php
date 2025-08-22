@@ -22,9 +22,9 @@ if (!defined('IN_APP')) { die('Acceso denegado.'); }
     <a href="index.php?controller=tabletas&action=index">Tabletas</a>
     <a href="index.php?controller=recursos&action=libros">Libros</a>
     <a href="index.php?controller=personas&action=index">Usuarios</a>
+    <a href="index.php?controller=reserva&action=index">Reservas</a>
     <a href="index.php?controller=reportes&action=index">Reportes</a>
     <a href="index.php?controller=recursos&action=index" class="active">Recursos</a>
-    <a href="index.php?controller=reserva&action=index">Reservas</a>
     <a href="index.php?controller=perfil&action=editar">Mi Perfil</a>
     <a href="index.php?controller=auth&action=logout"><button>Cerrar sesión</button></a>
   </nav>
@@ -61,7 +61,7 @@ if (!defined('IN_APP')) { die('Acceso denegado.'); }
       <!-- Tabla de recursos -->
       <div class="card">
         <div class="card-header">
-          <h5 class="mb-0"><i class="bi bi-list-ul"></i> Lista de Recursos</h5>
+          <h5 class="mb-0">Lista de Recursos</h5>
         </div>
         <div class="card-body">
           <div id="lista-recursos"></div>

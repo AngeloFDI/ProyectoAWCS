@@ -85,28 +85,57 @@ $(document).ready(function() {
                 if (r.success) {
                     var html = '';
                     if (r.reservas.length === 0) {
-                        html = '<p class="text-muted">No tienes reservas activas</p>';
+                        html = '<div class="text-center py-4">';
+                        html += '<i class="bi bi-calendar-x text-muted" style="font-size: 3rem;"></i>';
+                        html += '<p class="text-muted mt-2">No tienes reservas activas</p>';
+                        html += '</div>';
                     } else {
-                        html = '<div class="table-responsive"><table class="table table-striped">';
-                        html += '<thead><tr><th>Recurso</th><th>Tipo</th><th>Fecha Reserva</th><th>Fecha Devolución</th><th>Estado</th></tr></thead><tbody>';
+                        html = '<div class="table-responsive">';
+                        html += '<table class="table table-striped table-hover">';
+                        html += '<thead class="table-light">';
+                        html += '<tr>';
+                                                 html += '<th>Recurso</th>';
+                         html += '<th>Tipo</th>';
+                         html += '<th>Fecha Reserva</th>';
+                         html += '<th>Fecha Devolución</th>';
+                         html += '<th>Estado</th>';
+                        html += '</tr>';
+                        html += '</thead><tbody>';
+                        
                         r.reservas.forEach(function(reserva) {
-                            var estadoClass = reserva.estado === 'activo' ? 'badge bg-success' : 'badge bg-secondary';
+                            var estadoClass = '';
+                            var estadoText = '';
+                            
+                            if (reserva.estado === 'activo') {
+                                estadoClass = 'badge bg-success';
+                                estadoText = 'Activa';
+                            } else if (reserva.estado === 'completada') {
+                                estadoClass = 'badge bg-info';
+                                estadoText = 'Completada';
+                            } else if (reserva.estado === 'cancelada') {
+                                estadoClass = 'badge bg-danger';
+                                estadoText = 'Cancelada';
+                            } else {
+                                estadoClass = 'badge bg-secondary';
+                                estadoText = reserva.estado;
+                            }
+                            
                             html += '<tr>';
-                            html += '<td>' + reserva.nombre_recurso + '</td>';
+                            html += '<td><strong>' + reserva.nombre_recurso + '</strong></td>';
                             html += '<td>' + reserva.tipo_recurso + '</td>';
                             html += '<td>' + reserva.fecha_prestamo + '</td>';
-                            html += '<td>' + reserva.fecha_devolucion + '</td>';
-                            html += '<td><span class="' + estadoClass + '">' + reserva.estado + '</span></td>';
-                            html += '</tr>';
+                                                         html += '<td>' + reserva.fecha_devolucion + '</td>';
+                             html += '<td><span class="' + estadoClass + '">' + estadoText + '</span></td>';
+                             html += '</tr>';
                         });
                         html += '</tbody></table></div>';
                     }
                     $('#lista-reservas').html(html);
                 } else {
-                    $('#lista-reservas').html('<p class="text-danger">Error al cargar reservas</p>');
+                    $('#lista-reservas').html('<div class="alert alert-danger">Error al cargar reservas</div>');
                 }
             } catch (e) {
-                $('#lista-reservas').html('<p class="text-danger">Error al cargar reservas</p>');
+                $('#lista-reservas').html('<div class="alert alert-danger">Error al cargar reservas</div>');
             }
         });
     }

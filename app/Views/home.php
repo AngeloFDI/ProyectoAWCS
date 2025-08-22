@@ -15,40 +15,40 @@ if (!defined('IN_APP')) {
 </head>
 
 <body>
-    <nav class="navbar-main">
-        <span style="float:right; color: #fff; font-weight: bold;">
-            Bienvenido, <?= htmlspecialchars($usuario['nombre']) ?>
-        </span>
-        <a href="index.php?controller=home&action=index" class="active">Inicio</a>
-        <!-- Menú para PERSONAL -->
-        <?php if ($usuario['rol'] === 'personal'): ?>
+<nav class="navbar-main">
+    <span style="float:right; color: #fff; font-weight: bold;">
+        Bienvenido, <?= htmlspecialchars($usuario['nombre']) ?>
+    </span>
+    <a href="index.php?controller=home&action=index" class="active">Inicio</a>
+    <!-- Menú para PERSONAL -->
+    <?php if ($usuario['rol'] === 'personal'): ?>
         <a href="index.php?controller=computadoras&action=index">Computadoras</a>
         <a href="index.php?controller=tabletas&action=index">Tabletas</a>
         <a href="index.php?controller=recursos&action=libros">Libros</a>
         <a href="index.php?controller=personas&action=index">Usuarios</a>
+        <a href="index.php?controller=reserva&action=index">Reservas</a>
         <a href="index.php?controller=reportes&action=index">Reportes</a>
         <a href="index.php?controller=recursos&action=index">Recursos</a>
-        <?php else: ?>
+    <?php else: ?>
         <!-- Menú para ESTUDIANTE -->
         <a href="index.php?controller=computadoras&action=index">Computadoras</a>
         <a href="index.php?controller=tabletas&action=index">Tabletas</a>
         <a href="index.php?controller=recursos&action=libros">Libros</a>
-        <?php endif; ?>
         <a href="index.php?controller=reserva&action=index">Reservas</a>
-        <a href="index.php?controller=perfil&action=editar">Mi Perfil</a>
-        <a href="index.php?controller=auth&action=logout"><button>Cerrar sesión</button></a>
-    </nav>
-    <section class="hero-section">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-12 text-center">
-                    <h1 class="display-4 fw-bold mb-3"> Biblioteca del Liceo San José</h1>
-                    <p class="lead mb-0">Todo el material bibliográfico y los equipos tecnológicos disponibles para
-                        préstamo</p>
-                </div>
-            </div>
+    <?php endif; ?>
+    <a href="index.php?controller=perfil&action=editar">Mi Perfil</a>
+    <a href="index.php?controller=auth&action=logout"><button>Cerrar sesión</button></a>
+</nav>
+<section class="hero-section">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-12 text-center">
+          <h1 class="display-4 fw-bold mb-3"> Biblioteca del Liceo San José</h1>
+          <p class="lead mb-0">Todo el material bibliográfico y los equipos tecnológicos disponibles para préstamo</p>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
     <section>
         <div class="container">
             <div id="biblioCarousel" class="carousel slide mx-auto mb-5" data-bs-ride="carousel"
@@ -63,19 +63,16 @@ if (!defined('IN_APP')) {
                 </div>
                 <div class="carousel-inner" style="border-radius: 18px;">
                     <div class="carousel-item active">
-                        <img src="https://lsjbbtc.wordpress.com/wp-content/uploads/2021/03/p9110108.jpg?w=640"
-                            class="d-block mx-auto" alt="Imagen1"
-                            style="width:100%; height:1000px; object-fit:contain; background:#fff;">
+                        <img src="https://lsjbbtc.wordpress.com/wp-content/uploads/2021/03/p9110108.jpg?w=640" class="d-block mx-auto"
+                            alt="Imagen1" style="width:100%; height:1000px; object-fit:contain; background:#fff;">
                     </div>
                     <div class="carousel-item">
-                        <img src="https://lsjbbtc.wordpress.com/wp-content/uploads/2021/03/p9110108.jpg?w=640"
-                            class="d-block mx-auto" alt="Imagen2"
-                            style="width:100%; height:1000px; object-fit:contain; background:#fff;">
+                        <img src="https://crc891.com/wp-content/uploads/2023/08/269668_elcolegiode.jpg" class="d-block mx-auto"
+                            alt="Imagen2" style="width:100%; height:1000px; object-fit:contain; background:#fff;">
                     </div>
                     <div class="carousel-item">
-                        <img src="https://lsjbbtc.wordpress.com/wp-content/uploads/2021/03/p9110108.jpg?w=640"
-                            class="d-block mx-auto" alt="Imagen3"
-                            style="width:100%; height:1000px; object-fit:contain; background:#fff;">
+                        <img src="https://lsjbbtc.wordpress.com/wp-content/uploads/2021/03/p9110108.jpg?w=640" class="d-block mx-auto"
+                            alt="Imagen3" style="width:100%; height:1000px; object-fit:contain; background:#fff;">
                     </div>
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#biblioCarousel"
@@ -89,7 +86,7 @@ if (!defined('IN_APP')) {
                     <span class="visually-hidden">Siguiente</span>
                 </button>
             </div>
-
+            
             <div class="cards-container">
                 <!-- CARD para Computadoras -->
                 <div class="card">
@@ -158,12 +155,11 @@ if (!defined('IN_APP')) {
             </div>
         </div>
     </section>
-    <footer>
+    <footer >
         <i class="bi bi-facebook"> BiblioCra San José</i><br><br>
         <i class="bi bi-whatsapp"> +506 71234567</i><br><br>
         <i class="bi bi-book"> Biblioteca Liceo San José desde 1995</i>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>

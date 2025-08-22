@@ -23,10 +23,10 @@ if (!defined('IN_APP')) { die('Acceso denegado.'); }
     <a href="index.php?controller=recursos&action=libros" class="active">Libros</a>
     <?php if ($usuario['rol'] === 'personal'): ?>
       <a href="index.php?controller=personas&action=index">Usuarios</a>
+      <a href="index.php?controller=reserva&action=index">Reservas</a>
       <a href="index.php?controller=reportes&action=index">Reportes</a>
       <a href="index.php?controller=recursos&action=index">Recursos</a>
     <?php endif; ?>
-    <a href="index.php?controller=reserva&action=index">Reservas</a>
     <a href="index.php?controller=perfil&action=editar">Mi Perfil</a>
     <a href="index.php?controller=auth&action=logout"><button>Cerrar sesión</button></a>
   </nav>
@@ -36,9 +36,7 @@ if (!defined('IN_APP')) { die('Acceso denegado.'); }
     <div class="container">
       <div class="row align-items-center">
         <div class="col-md-12 text-center">
-          <h1 class="display-4 fw-bold mb-3">
-            <i class="bi bi-book"></i> Catálogo de Libros
-          </h1>
+          <h1 class="display-4 fw-bold mb-3">Catálogo de Libros</h1>
           <p class="lead mb-0">Explore nuestra colección de libros disponibles para préstamo</p>
         </div>
       </div>
@@ -95,7 +93,7 @@ if (!defined('IN_APP')) { die('Acceso denegado.'); }
     <?php endif; ?>
     <!-- Contenedor de libros -->
     <div id="libros-container" class="row g-4">
-      <!-- Los libros se cargarán dinámicamente aquí -->
+
     </div>
 
     <!-- Mensaje de no resultados -->
