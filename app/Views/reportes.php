@@ -29,22 +29,29 @@ if (!defined('IN_APP')) {
         <a href="index.php?controller=auth&action=logout"><button>Cerrar sesión</button></a>
     </nav>
     <section>
-        <h1 id="titulo">Reportes de Uso y Devoluciones</h1>
+    <section class="hero-section">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-12 text-center">
+          <h1 class="display-4 fw-bold mb-3">Reportes de Uso y Devoluciones</h1>
+          <p class="lead mb-0">Genere reportes para el seguimiento de préstamos de libros, tabletas y computadoras</p>
+        </div>
+      </div>
+    </div>
+  </section>
         <div class="container">
             <nav class="navbar navbar-light bg-light">
                 <form class="form-inline search-container">
                     <input class="form-control" type="search" placeholder="Buscar en reportes" aria-label="Search">
                     <button class="btn btn-outline-success" type="submit">Buscar</button>
-                    <button id="gestionar"> Gestionar Reportes </button>
                 </form>
             </nav>
         </div>
         <div class="reportes-container">
-            <p>Genera reportes para el seguimiento de préstamos de libros, tabletas y computadoras.<br>
-                Utiliza los filtros para personalizar el reporte*:</p>
+            <h4>Utilice los filtros para personalizar el reporte</h4>
 
             <form class="reporte-form">
-                <select id="tipo-recurso">
+            <select id="tipo-recurso">
                     <option value="todos">Todos</option>
                     <option value="libros">Libros</option>
                     <option value="computadoras">Computadoras</option>
@@ -55,11 +62,11 @@ if (!defined('IN_APP')) {
                 <button type="button" id="btn-generar">Generar reporte</button>
                 <button type="button" id="exportar-excel" class="btn btn-success mb-2">
                     <i class="bi bi-file-earmark-excel"></i> Exportar a Excel
-                </button>
+                </button> 
             </form>
 
             <div class="table-responsive">
-                <table id="tabla-reportes" class="table">
+            <table id="tabla-reportes" class="table">
                     <thead>
                         <tr>
                             <th>Tipo</th>
@@ -75,7 +82,7 @@ if (!defined('IN_APP')) {
                     </tbody>
                 </table>
             </div>
-            
+          
         </div>
     </section>
     <footer> 
@@ -84,7 +91,53 @@ if (!defined('IN_APP')) {
       <i class="bi bi-book">  Biblioteca Liceo San José desde 1995</i>
     </footer>
     <script src="js/jquery-3.7.1.min.js"></script>
-    <script src="js/reportes.js"></script>
+    <script>
+$(document).ready(function() {
+    $('#btn-generar').click(function() {
+        var tipo = $('#tipo-recurso').val();
+        var fecha_inicio = $('#fecha-inicio').val();
+        var fecha_fin = $('#fecha-fin').val();
+        $.post('index.php?controller=reportes&action=generar', {
+            tipo: tipo,
+            fecha_inicio: fecha_inicio,
+            fecha_fin: fecha_fin
+        }, function(resp) {
+            try {
+                var r = (typeof resp === "object") ? resp : JSON.parse(resp);
+                var html = '';
+                if (r.success && r.reportes.length > 0) {
+                    r.reportes.forEach(function(rep) {
+                        html += '<tr>';
+                        html += '<td>' + rep.tipo + '</td>';
+                        html += '<td>' + rep.recurso + '</td>';
+                        html += '<td>' + rep.usuario + ' ' + rep.apellido + '</td>';
+                        html += '<td>' + rep.fecha_prestamo + '</td>';
+                        html += '<td>' + rep.fecha_devolucion + '</td>';
+                        html += '<td>' + rep.estado + '</td>';
+                        html += '</tr>';
+                    });
+                } else {
+                    html = '<tr><td colspan="6">No hay resultados</td></tr>';
+                }
+                $('#tabla-reportes tbody').html(html);
+            } catch (e) {
+                $('#tabla-reportes tbody').html('<tr><td colspan="6">Error al cargar reportes</td></tr>');
+            }
+        });
+    });
+
+    $('#exportar-excel').click(function() {
+        var table = document.getElementById('tabla-reportes');
+        var html = table.outerHTML.replace(/ /g, '%20');
+        var a = document.createElement('a');
+        a.href = 'data:application/vnd.ms-excel,' + html;
+        a.download = 'reporte.xls';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+    });
+});
+</script>
 </body>
 
 </html>

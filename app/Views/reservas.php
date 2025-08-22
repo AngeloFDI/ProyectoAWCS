@@ -50,7 +50,7 @@ if (!defined('IN_APP')) {
             <nav class="navbar navbar-light bg-light">
                 <form class="form-inline search-container">
                     <input class="form-control" type="search" placeholder="Buscar en reservas" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Buscar</button>
+                    <button class="btn btn-outline-primary" type="submit">Buscar</button>
                     <?php if ($usuario['rol'] === 'personal'): ?>
                         <button id="gestionar"> Gestionar Reservas </button>
                     <?php endif; ?>
@@ -111,7 +111,7 @@ if (!defined('IN_APP')) {
             <!-- Tabla de reservas -->
             <div class="card">
                 <div class="card-header">
-                    <h5 class="mb-0"><i class="bi bi-calendar-check"></i> Mis Reservas</h5>
+                    <h5 class="mb-0">Mis Reservas</h5>
                 </div>
                 <div class="card-body">
                     <div id="lista-reservas"></div>

@@ -29,10 +29,17 @@ if (!defined('IN_APP')) { die('Acceso denegado.'); }
     <a href="index.php?controller=perfil&action=editar">Mi Perfil</a>
     <a href="index.php?controller=auth&action=logout"><button>Cerrar sesión</button></a>
   </nav>
-    
+  <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-12 text-center">
+                    <h1 class="display-4 fw-bold mb-3">Gestión de Reservas</h1>
+                    <p class="lead mb-0">Administre las reservas de la biblioteca</p>
+                </div>
+            </div>
+        </div>
+    </section>
     <div class="container">
-        <h1>Gestionar Reservas</h1>
-        <p class="text-muted">Panel de administración para gestionar todas las reservas del sistema</p>
         
         <div class="row mb-3">
             <div class="col-md-6">
@@ -40,9 +47,6 @@ if (!defined('IN_APP')) { die('Acceso denegado.'); }
                     <input type="text" class="form-control" id="buscar-reserva" placeholder="Buscar por usuario o recurso...">
                     <button class="btn btn-outline-secondary" type="button" onclick="filtrarReservas()">Buscar</button>
                 </div>
-            </div>
-            <div class="col-md-6 text-end">
-                <button class="btn btn-primary" onclick="cargarTodasReservas()">Actualizar Lista</button>
             </div>
         </div>
         
