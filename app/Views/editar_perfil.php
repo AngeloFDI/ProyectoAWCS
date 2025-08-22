@@ -12,7 +12,6 @@ if (!defined('IN_APP')) { die('Acceso denegado.'); }
 <body>
     <section class="register-section">
         <h1>Editar mi Perfil</h1>
-        <div id="alerta-perfil"></div>
 
         <form method="POST" id="editar-perfil" class="register-form" autocomplete="off">
             <label>Nombre*</label>
@@ -20,7 +19,7 @@ if (!defined('IN_APP')) { die('Acceso denegado.'); }
             <label>Apellido*</label>
             <input type="text" name="apellido" value="<?= htmlspecialchars($usuario['apellido']) ?>"><br>
             <label>Correo*</label>
-            <input type="email" name="correo" value="<?= htmlspecialchars($usuario['correo']) ?>"><br>
+            <input type="email" name="correo" placeholder="ejemplo@correo.com" value="<?= htmlspecialchars($usuario['correo']) ?>"><br>
             <label>Sección (opcional)</label>
             <input type="text" name="seccion" value="<?= htmlspecialchars($usuario['seccion'] ?? '') ?>"><br>
             <label>Nueva Contraseña (opcional)</label>
@@ -34,6 +33,7 @@ if (!defined('IN_APP')) { die('Acceso denegado.'); }
         </div>
     </section>
     <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="js/editar_perfil.js"></script>
 </body>
 </html>

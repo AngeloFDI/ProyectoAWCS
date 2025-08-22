@@ -39,7 +39,7 @@ class PerfilController
         $pass1 = $_POST['contrasena_nueva'] ?? '';
         $pass2 = $_POST['contrasena_confirmar'] ?? '';
 
-        // Validación básica
+        // Validación
         if (!$nombre || !$apellido || !$correo) {
             echo json_encode(['success' => false, 'msg' => 'Todos los campos marcados son obligatorios.']);
             return;

@@ -23,7 +23,7 @@ if (!defined('IN_APP')) {
             <label>Apellido*</label>
             <input type="text" name="apellido" value="<?= htmlspecialchars($datos['apellido'] ?? '') ?>"><br>
             <label>Correo*</label>
-            <input type="email" name="correo" value="<?= htmlspecialchars($datos['correo'] ?? '') ?>"><br>
+            <input type="email" name="correo" placeholder="ejemplo@correo.com" value="<?= htmlspecialchars($datos['correo'] ?? '') ?>"><br>
             <label>Rol*</label>
             <select name="rol">
                 <option value="estudiante" <?= (isset($datos['rol']) && $datos['rol']=='estudiante') ? 'selected':''; ?>>Estudiante</option>
@@ -45,7 +45,6 @@ if (!defined('IN_APP')) {
         </form>
     </section>
     <script src="js/jquery-3.7.1.min.js"></script>
-    <!-- SweetAlert2 CDN -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="js/crud_usuario.js"></script>
 </body>

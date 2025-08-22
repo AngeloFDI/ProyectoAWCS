@@ -22,9 +22,9 @@ if (!defined('IN_APP')) {
         <a href="index.php?controller=tabletas&action=index">Tabletas</a>
         <a href="index.php?controller=recursos&action=libros">Libros</a>
         <a href="index.php?controller=personas&action=index">Personas</a>
-        <a href="index.php?controller=reserva&action=index">Reservas</a>
         <a href="index.php?controller=reportes&action=index" class="active">Reportes</a>
         <a href="index.php?controller=recursos&action=index">Recursos</a>
+        <a href="index.php?controller=reserva&action=index">Reservas</a>
         <a href="index.php?controller=perfil&action=editar">Mi Perfil</a>
         <a href="index.php?controller=auth&action=logout"><button>Cerrar sesión</button></a>
     </nav>
@@ -84,53 +84,7 @@ if (!defined('IN_APP')) {
       <i class="bi bi-book">  Biblioteca Liceo San José desde 1995</i>
     </footer>
     <script src="js/jquery-3.7.1.min.js"></script>
-    <script>
-$(document).ready(function() {
-    $('#btn-generar').click(function() {
-        var tipo = $('#tipo-recurso').val();
-        var fecha_inicio = $('#fecha-inicio').val();
-        var fecha_fin = $('#fecha-fin').val();
-        $.post('index.php?controller=reportes&action=generar', {
-            tipo: tipo,
-            fecha_inicio: fecha_inicio,
-            fecha_fin: fecha_fin
-        }, function(resp) {
-            try {
-                var r = (typeof resp === "object") ? resp : JSON.parse(resp);
-                var html = '';
-                if (r.success && r.reportes.length > 0) {
-                    r.reportes.forEach(function(rep) {
-                        html += '<tr>';
-                        html += '<td>' + rep.tipo + '</td>';
-                        html += '<td>' + rep.recurso + '</td>';
-                        html += '<td>' + rep.usuario + ' ' + rep.apellido + '</td>';
-                        html += '<td>' + rep.fecha_prestamo + '</td>';
-                        html += '<td>' + rep.fecha_devolucion + '</td>';
-                        html += '<td>' + rep.estado + '</td>';
-                        html += '</tr>';
-                    });
-                } else {
-                    html = '<tr><td colspan="6">No hay resultados</td></tr>';
-                }
-                $('#tabla-reportes tbody').html(html);
-            } catch (e) {
-                $('#tabla-reportes tbody').html('<tr><td colspan="6">Error al cargar reportes</td></tr>');
-            }
-        });
-    });
-
-    $('#exportar-excel').click(function() {
-        var table = document.getElementById('tabla-reportes');
-        var html = table.outerHTML.replace(/ /g, '%20');
-        var a = document.createElement('a');
-        a.href = 'data:application/vnd.ms-excel,' + html;
-        a.download = 'reporte.xls';
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
-    });
-});
-</script>
+    <script src="js/reportes.js"></script>
 </body>
 
 </html>

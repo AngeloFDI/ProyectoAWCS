@@ -1,18 +1,34 @@
 $(document).ready(function () {
     $('#editar-perfil').submit(function (e) {
         e.preventDefault();
-        $('#alerta-perfil').html('');
         var datos = $(this).serialize();
         $.post('index.php?controller=perfil&action=actualizar', datos, function (resp) {
             try {
                 var r = (typeof resp === 'object') ? resp : JSON.parse(resp);
                 if (r.success) {
-                    $('#alerta-perfil').html('<div style="color:green;font-weight:bold">' + r.msg + '</div>');
+                    // Alertas
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Perfil actualizado',
+                        text: r.msg,
+                        showConfirmButton: false,
+                        timer: 1400
+                    }).then(() => {
+                        window.location = 'index.php?controller=home&action=index'; //Redirige a home
+                    });
                 } else {
-                    $('#alerta-perfil').html('<div style="color:red;">' + r.msg + '</div>');
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Error al actualizar',
+                        text: r.msg
+                    });
                 }
             } catch (err) {
-                $('#alerta-perfil').html('<div style="color:red;">Error inesperado al actualizar</div>');
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error inesperado',
+                    text: 'Error inesperado al actualizar'
+                });
             }
         });
     });

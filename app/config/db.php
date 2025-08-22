@@ -3,7 +3,7 @@ class Database {
     public static function connect() {
         $host = 'localhost';
         $user = 'root';
-        $pass = ''; // recuerden cambiar la contraeña por la de ustedes
+        $pass = ''; // recuerden cambiar la contraseña por la de ustedes
         $db   = 'proyectoawcs'; // Cambia si tu base lleva otro nombre
 
         $conn = new mysqli($host, $user, $pass, $db);
