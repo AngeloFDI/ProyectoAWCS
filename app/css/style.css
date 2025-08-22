@@ -57,18 +57,16 @@ button:hover {
 
 .search-container .form-control {
   flex: 1;
-  border-radius: 20px;
   border: 1px solid #ddd;
   padding: 8px 10px;
 }
 
 .search-container .btn {
-  border-radius: 20px;
   padding: 8px 20px;
 }
 
 #gestionar {
-  background-color: #52b4c5;
+  background-color: #753f7a;
   color: white;
   padding: 10px 15px;
   margin: 10px;

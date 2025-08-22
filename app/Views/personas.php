@@ -40,13 +40,13 @@ if (!defined('IN_APP')) { die('Acceso denegado.'); }
   </section>
   <section>
     <div class="container">
-      <button class="btn btn-success mb-2" onclick="window.location='index.php?controller=personas&action=crear_form'">
+      <button class="btn btn-success" onclick="window.location='index.php?controller=personas&action=crear_form'">
         <i class="bi bi-person-plus"></i> Crear Usuario
       </button>
-      <nav class="navbar navbar-light bg-light mb-2">
+      <nav class="navbar navbar-light bg-light">
         <form class="form-inline search-container" id="form-buscar">
-          <input class="form-control" type="search" placeholder="Buscar persona" aria-label="Search" id="input-buscar">
-          <button class="btn btn-outline-success" type="submit">Buscar</button>
+          <input class="form-control" type="search" placeholder="Buscar usuario" aria-label="Search" id="input-buscar">
+          <button class="btn btn-outline-primary" type="submit">Buscar</button>
         </form>
       </nav>
       <div id="lista-personas"></div>

@@ -67,7 +67,7 @@ if (!defined('IN_APP')) {
                             alt="Imagen1" style="width:100%; height:1000px; object-fit:contain; background:#fff;">
                     </div>
                     <div class="carousel-item">
-                        <img src="https://lsjbbtc.wordpress.com/wp-content/uploads/2021/03/p9110108.jpg?w=640" class="d-block mx-auto"
+                        <img src="https://crc891.com/wp-content/uploads/2023/08/269668_elcolegiode.jpg" class="d-block mx-auto"
                             alt="Imagen2" style="width:100%; height:1000px; object-fit:contain; background:#fff;">
                     </div>
                     <div class="carousel-item">

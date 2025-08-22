@@ -61,7 +61,7 @@ if (!defined('IN_APP')) { die('Acceso denegado.'); }
       <!-- Tabla de recursos -->
       <div class="card">
         <div class="card-header">
-          <h5 class="mb-0"><i class="bi bi-list-ul"></i> Lista de Recursos</h5>
+          <h5 class="mb-0">Lista de Recursos</h5>
         </div>
         <div class="card-body">
           <div id="lista-recursos"></div>

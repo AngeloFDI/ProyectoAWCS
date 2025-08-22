@@ -36,9 +36,7 @@ if (!defined('IN_APP')) { die('Acceso denegado.'); }
     <div class="container">
       <div class="row align-items-center">
         <div class="col-md-12 text-center">
-          <h1 class="display-4 fw-bold mb-3">
-            <i class="bi bi-book"></i> Catálogo de Libros
-          </h1>
+          <h1 class="display-4 fw-bold mb-3">Catálogo de Libros</h1>
           <p class="lead mb-0">Explore nuestra colección de libros disponibles para préstamo</p>
         </div>
       </div>
@@ -95,7 +93,7 @@ if (!defined('IN_APP')) { die('Acceso denegado.'); }
     <?php endif; ?>
     <!-- Contenedor de libros -->
     <div id="libros-container" class="row g-4">
-      <!-- Los libros se cargarán dinámicamente aquí -->
+
     </div>
 
     <!-- Mensaje de no resultados -->
