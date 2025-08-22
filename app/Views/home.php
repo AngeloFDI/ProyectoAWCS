@@ -62,15 +62,15 @@ if (!defined('IN_APP')) {
                 </div>
                 <div class="carousel-inner" style="border-radius: 18px;">
                     <div class="carousel-item active">
-                        <img src="https://lsjbbtc.wordpress.com/wp-content/uploads/2021/03/p9110108.jpg?w=640" class="d-block mx-auto"
+                        <img src="app/img/estantes_libros.jpg" class="d-block mx-auto"
                             alt="Imagen1" style="width:100%; height:1000px; object-fit:contain; background:#fff;">
                     </div>
                     <div class="carousel-item">
-                        <img src="https://crc891.com/wp-content/uploads/2023/08/269668_elcolegiode.jpg" class="d-block mx-auto"
+                        <img src="app/img/mesas.jpg" class="d-block mx-auto"
                             alt="Imagen2" style="width:100%; height:1000px; object-fit:contain; background:#fff;">
                     </div>
                     <div class="carousel-item">
-                        <img src="https://lsjbbtc.wordpress.com/wp-content/uploads/2021/03/p9110108.jpg?w=640" class="d-block mx-auto"
+                        <img src="app/img/vista_entrada.jpg" class="d-block mx-auto"
                             alt="Imagen3" style="width:100%; height:1000px; object-fit:contain; background:#fff;">
                     </div>
                 </div>
