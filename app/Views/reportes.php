@@ -25,6 +25,7 @@ if (!defined('IN_APP')) {
         <a href="index.php?controller=reserva&action=index">Reservas</a>
         <a href="index.php?controller=reportes&action=index" class="active">Reportes</a>
         <a href="index.php?controller=recursos&action=index">Recursos</a>
+        <a href="index.php?controller=perfil&action=editar">Mi Perfil</a>
         <a href="index.php?controller=auth&action=logout"><button>Cerrar sesión</button></a>
     </nav>
     <section>
