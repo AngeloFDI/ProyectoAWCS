@@ -21,7 +21,7 @@ if (!defined('IN_APP')) {
         <a href="index.php?controller=computadoras&action=index">Computadoras</a>
         <a href="index.php?controller=tabletas&action=index">Tabletas</a>
         <a href="index.php?controller=recursos&action=libros">Libros</a>
-        <a href="index.php?controller=personas&action=index">Usuarios</a>
+        <a href="index.php?controller=personas&action=index">Personas</a>
         <a href="index.php?controller=reportes&action=index" class="active">Reportes</a>
         <a href="index.php?controller=recursos&action=index">Recursos</a>
         <a href="index.php?controller=reserva&action=index">Reservas</a>
@@ -44,69 +44,38 @@ if (!defined('IN_APP')) {
                 Utiliza los filtros para personalizar el reporte*:</p>
 
             <form class="reporte-form">
-                <div>
-                    <label for="tipo-recurso">Recurso</label><br>
-                    <select id="tipo-recurso">
-                        <option value="todos">Todos</option>
-                        <option value="libros">Libros</option>
-                        <option value="tabletas">Tabletas</option>
-                        <option value="computadoras">Computadoras</option>
-                    </select>
-                </div>
-                <div>
-                    <label for="fecha-inicio">Desde</label><br>
-                    <input type="date" id="fecha-inicio">
-                </div>
-                <div>
-                    <label for="fecha-fin">Hasta</label><br>
-                    <input type="date" id="fecha-fin">
-                </div>
-                <div>
-                    <button type="button">Generar reporte</button>
-                </div>
+                <select id="tipo-recurso">
+                    <option value="todos">Todos</option>
+                    <option value="libros">Libros</option>
+                    <option value="computadoras">Computadoras</option>
+                    <option value="tabletas">Tabletas</option>
+                </select>
+                <input type="date" id="fecha-inicio">
+                <input type="date" id="fecha-fin">
+                <button type="button" id="btn-generar">Generar reporte</button>
+                <button type="button" id="exportar-excel" class="btn btn-success mb-2">
+                    <i class="bi bi-file-earmark-excel"></i> Exportar a Excel
+                </button>
             </form>
 
             <div class="table-responsive">
-                <table>
-                    <tr>
-                        <th>Tipo</th>
-                        <th>Recurso</th>
-                        <th>Persona</th>
-                        <th>Fecha Préstamo</th>
-                        <th>Fecha Devolución</th>
-                        <th>Estado</th>
-                    </tr>
-                    <!-- Ejemplos de filas. Será dinámico con backend -->
-                    <tr>
-                        <td>Libro</td>
-                        <td>El Principito</td>
-                        <td>Emily Cortés</td>
-                        <td>2024-06-05</td>
-                        <td>2024-06-10</td>
-                        <td>Devuelto</td>
-                    </tr>
-                    <tr>
-                        <td>Computadora</td>
-                        <td>Dell Latitude 5420</td>
-                        <td>Luis Barquero</td>
-                        <td>2024-06-08</td>
-                        <td>2024-06-15</td>
-                        <td>Pendiente</td>
-                    </tr>
-                    <tr>
-                        <td>Tableta</td>
-                        <td>Samsung Galaxy Tab S6 Lite</td>
-                        <td>Angelo Segura</td>
-                        <td>2024-06-06</td>
-                        <td>2024-06-13</td>
-                        <td>Devuelto</td>
-                    </tr>
+                <table id="tabla-reportes" class="table">
+                    <thead>
+                        <tr>
+                            <th>Tipo</th>
+                            <th>Recurso</th>
+                            <th>Persona</th>
+                            <th>Fecha Préstamo</th>
+                            <th>Fecha Devolución</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Filas dinámicas aquí -->
+                    </tbody>
                 </table>
             </div>
-            <div class="note">
-                *Registros de ejemplo; pronto estarán vinculados con la base de datos real y serán
-                filtrados según los criterios seleccionados.
-            </div>
+            
         </div>
     </section>
     <footer> 

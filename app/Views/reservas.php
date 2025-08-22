@@ -17,14 +17,23 @@ if (!defined('IN_APP')) {
     <nav class="navbar-main">
         <span style="float:right; color: #fff; font-weight: bold;">Bienvenido, <?= htmlspecialchars($usuario['nombre']) ?></span>
         <a href="index.php?controller=home&action=index">Inicio</a>
+    <!-- Menú para PERSONAL -->
+    <?php if ($usuario['rol'] === 'personal'): ?>
         <a href="index.php?controller=computadoras&action=index">Computadoras</a>
         <a href="index.php?controller=tabletas&action=index">Tabletas</a>
         <a href="index.php?controller=recursos&action=libros">Libros</a>
-        <a href="index.php?controller=personas&action=index">Personas</a>
-        <a href="index.php?controller=reserva&action=index" class="active">Reservas</a>
+        <a href="index.php?controller=personas&action=index">Usuarios</a>
         <a href="index.php?controller=reportes&action=index">Reportes</a>
         <a href="index.php?controller=recursos&action=index">Recursos</a>
-        <a href="index.php?controller=auth&action=logout"><button>Cerrar sesión</button></a>
+    <?php else: ?>
+        <!-- Menú para ESTUDIANTE -->
+        <a href="index.php?controller=computadoras&action=index">Computadoras</a>
+        <a href="index.php?controller=tabletas&action=index">Tabletas</a>
+        <a href="index.php?controller=recursos&action=libros">Libros</a>
+    <?php endif; ?>
+    <a href="index.php?controller=reserva&action=index" class="active">Reservas</a>
+    <a href="index.php?controller=perfil&action=editar">Mi Perfil</a>
+    <a href="index.php?controller=auth&action=logout"><button>Cerrar sesión</button></a>
     </nav>
     <section class="hero-section">
     <div class="container">
@@ -46,7 +55,8 @@ if (!defined('IN_APP')) {
                         <button id="gestionar"> Gestionar Reservas </button>
                     <?php endif; ?>
                 </form><br>
-                <h4>Seleccione el tipo de recurso que desea reservar:</h4>
+                <div></div>
+                <h4>Seleccione el tipo de recurso que desea reservar</h4>
                 <div class="selector-container">
                     <button onclick="showForm('libro')">Libro</button>
                     <button onclick="showForm('tableta')">Tableta</button>

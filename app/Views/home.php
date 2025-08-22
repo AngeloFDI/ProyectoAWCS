@@ -26,7 +26,6 @@ if (!defined('IN_APP')) {
         <a href="index.php?controller=tabletas&action=index">Tabletas</a>
         <a href="index.php?controller=recursos&action=libros">Libros</a>
         <a href="index.php?controller=personas&action=index">Usuarios</a>
-        <a href="index.php?controller=reserva&action=index">Reservas</a>
         <a href="index.php?controller=reportes&action=index">Reportes</a>
         <a href="index.php?controller=recursos&action=index">Recursos</a>
     <?php else: ?>
@@ -34,8 +33,8 @@ if (!defined('IN_APP')) {
         <a href="index.php?controller=computadoras&action=index">Computadoras</a>
         <a href="index.php?controller=tabletas&action=index">Tabletas</a>
         <a href="index.php?controller=recursos&action=libros">Libros</a>
-        <a href="index.php?controller=reserva&action=index">Reservas</a>
     <?php endif; ?>
+    <a href="index.php?controller=reserva&action=index">Reservas</a>
     <a href="index.php?controller=perfil&action=editar">Mi Perfil</a>
     <a href="index.php?controller=auth&action=logout"><button>Cerrar sesión</button></a>
 </nav>
@@ -87,72 +86,7 @@ if (!defined('IN_APP')) {
                 </button>
             </div>
             
-            <div class="cards-container">
-                <!-- CARD para Computadoras -->
-                <div class="card">
-                    <div class="card-body">
-                        <h4 class="card-title">Computadoras</h4>
-                        <a href="index.php?controller=computadoras&action=index">
-                            <button>Ir a Computadoras</button>
-                        </a>
-                    </div>
-                </div>
-                <!-- CARD para Tabletas -->
-                <div class="card">
-                    <div class="card-body">
-                        <h4 class="card-title">Tabletas</h4>
-                        <a href="index.php?controller=tabletas&action=index">
-                            <button>Ir a Tabletas</button>
-                        </a>
-                    </div>
-                </div>
-                <!-- CARD para Libros -->
-                <div class="card">
-                    <div class="card-body">
-                        <h4 class="card-title">Libros</h4>
-                        <a href="index.php?controller=libros&action=index">
-                            <button>Ir a Libros</button>
-                        </a>
-                    </div>
-                </div>
-                <!-- CARD para Reservas -->
-                <div class="card">
-                    <div class="card-body">
-                        <h4 class="card-title">Reservas</h4>
-                        <a href="index.php?controller=reserva&action=index">
-                            <button>Reservar</button>
-                        </a>
-                    </div>
-                </div>
-                <!-- SOLO PARA PERSONAL: Usuarios y Reportes -->
-                <?php if ($usuario['rol'] === 'personal'): ?>
-                <div class="card">
-                    <div class="card-body">
-                        <h4 class="card-title">Usuarios</h4>
-                        <a href="index.php?controller=personas&action=index">
-                            <button>Administrar Usuarios</button>
-                        </a>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-body">
-                        <h4 class="card-title">Reportes</h4>
-                        <a href="index.php?controller=reportes&action=index">
-                            <button>Ver Reportes</button>
-                        </a>
-                    </div>
-                </div>
-                <?php endif; ?>
-                <!-- CARD para Editar Perfil -->
-                <div class="card">
-                    <div class="card-body">
-                        <h4 class="card-title">Editar Perfil</h4>
-                        <a href="index.php?controller=perfil&action=editar">
-                            <button>Editar mi Perfil</button>
-                        </a>
-                    </div>
-                </div>
-            </div>
+            
         </div>
     </section>
     <footer >
