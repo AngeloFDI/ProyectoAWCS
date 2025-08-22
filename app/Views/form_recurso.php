@@ -11,7 +11,6 @@ if (!defined('IN_APP')) {
     <link rel="stylesheet" href="app/css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.css" rel="stylesheet">
-   
 </head>
 <body>
     <nav class="navbar-main">
