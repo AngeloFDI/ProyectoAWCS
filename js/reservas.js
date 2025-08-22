@@ -77,6 +77,27 @@ $(document).ready(function() {
         });
     });
 
+    // Buscar en la tabla de reservas (filtro en frontend)
+    $('.search-container').on('submit', function(e){
+        e.preventDefault();
+        var texto = $(this).find('input[type="search"]').val().trim().toLowerCase();
+        if(texto.length === 0) {
+            // Muestra todas las filas
+            $('#lista-reservas table tbody tr').show();
+        } else {
+            $('#lista-reservas table tbody tr').each(function(){
+                var encontrado = false;
+                $(this).find('td').each(function(){
+                    if ($(this).text().toLowerCase().includes(texto)) {
+                        encontrado = true;
+                    }
+                });
+                if(encontrado) $(this).show();
+                else $(this).hide();
+            });
+        }
+    });
+    
     // Función para cargar mis reservas
     function cargarMisReservas() {
         $.post('index.php?controller=reserva&action=listar', function(resp) {
