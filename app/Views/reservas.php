@@ -26,7 +26,6 @@ if (!defined('IN_APP')) {
         <a href="index.php?controller=tabletas&action=index">Tabletas</a>
         <a href="index.php?controller=recursos&action=libros">Libros</a>
         <a href="index.php?controller=personas&action=index">Usuarios</a>
-        <a href="index.php?controller=reserva&action=index">Reservas</a>
         <a href="index.php?controller=reportes&action=index">Reportes</a>
         <a href="index.php?controller=recursos&action=index">Recursos</a>
         <?php else: ?>
@@ -34,8 +33,8 @@ if (!defined('IN_APP')) {
         <a href="index.php?controller=computadoras&action=index">Computadoras</a>
         <a href="index.php?controller=tabletas&action=index">Tabletas</a>
         <a href="index.php?controller=recursos&action=libros">Libros</a>
-        <a href="index.php?controller=reserva&action=index" class="active">Reservas</a>
         <?php endif; ?>
+        <a href="index.php?controller=reserva&action=index" class="active">Reservas</a>
         <a href="index.php?controller=perfil&action=editar">Mi Perfil</a>
         <a href="index.php?controller=auth&action=logout"><button>Cerrar sesión</button></a>
     </nav>
