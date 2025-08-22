@@ -498,29 +498,3 @@ footer {
   max-height: 150px;
   border-radius: 5px;
 }
-
-/* Gestionar Reservas */
-.reserva-wrapper {
-    background: #f8fafd;
-    border-radius: 16px;
-    box-shadow: 0 3px 14px #001b4411;
-}
-.form-section {
-    display: none;
-    margin-top: 12px;
-}
-.form-section.active {
-    display: block;
-    transition: all 0.3s;
-}
-.selector-container .btn {
-    min-width: 120px;
-}
-#lista-reservas table {
-    background: #fff;
-    border-radius: 10px;
-    overflow: hidden;
-}
-#lista-reservas th, #lista-reservas td {
-    vertical-align: middle !important;
-}

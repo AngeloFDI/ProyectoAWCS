@@ -5,11 +5,11 @@ if (!defined('IN_APP')) { die('Acceso denegado.'); }
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <title>Personas</title>
-    <link rel="stylesheet" href="app/css/style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <title>Personas</title>
+  <link rel="stylesheet" href="app/css/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body>
@@ -22,9 +22,9 @@ if (!defined('IN_APP')) { die('Acceso denegado.'); }
     <a href="index.php?controller=tabletas&action=index">Tabletas</a>
     <a href="index.php?controller=recursos&action=libros">Libros</a>
     <a href="index.php?controller=personas&action=index" class="active">Usuarios</a>
+    <a href="index.php?controller=reserva&action=index">Reservas</a>
     <a href="index.php?controller=reportes&action=index">Reportes</a>
     <a href="index.php?controller=recursos&action=index">Recursos</a>
-    <a href="index.php?controller=reserva&action=index">Reservas</a>
     <a href="index.php?controller=perfil&action=editar">Mi Perfil</a>
     <a href="index.php?controller=auth&action=logout"><button>Cerrar sesión</button></a>
   </nav>
@@ -62,5 +62,4 @@ if (!defined('IN_APP')) { die('Acceso denegado.'); }
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="js/crud_usuario.js"></script>
 </body>
-
 </html>

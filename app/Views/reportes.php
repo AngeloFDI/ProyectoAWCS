@@ -25,7 +25,6 @@ if (!defined('IN_APP')) {
         <a href="index.php?controller=reserva&action=index">Reservas</a>
         <a href="index.php?controller=reportes&action=index" class="active">Reportes</a>
         <a href="index.php?controller=recursos&action=index">Recursos</a>
-        <a href="index.php?controller=perfil&action=editar">Mi Perfil</a>
         <a href="index.php?controller=auth&action=logout"><button>Cerrar sesión</button></a>
     </nav>
     <section>
@@ -44,38 +43,69 @@ if (!defined('IN_APP')) {
                 Utiliza los filtros para personalizar el reporte*:</p>
 
             <form class="reporte-form">
-                <select id="tipo-recurso">
-                    <option value="todos">Todos</option>
-                    <option value="libros">Libros</option>
-                    <option value="computadoras">Computadoras</option>
-                    <option value="tabletas">Tabletas</option>
-                </select>
-                <input type="date" id="fecha-inicio">
-                <input type="date" id="fecha-fin">
-                <button type="button" id="btn-generar">Generar reporte</button>
-                <button type="button" id="exportar-excel" class="btn btn-success mb-2">
-                    <i class="bi bi-file-earmark-excel"></i> Exportar a Excel
-                </button>
+                <div>
+                    <label for="tipo-recurso">Recurso</label><br>
+                    <select id="tipo-recurso">
+                        <option value="todos">Todos</option>
+                        <option value="libros">Libros</option>
+                        <option value="tabletas">Tabletas</option>
+                        <option value="computadoras">Computadoras</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="fecha-inicio">Desde</label><br>
+                    <input type="date" id="fecha-inicio">
+                </div>
+                <div>
+                    <label for="fecha-fin">Hasta</label><br>
+                    <input type="date" id="fecha-fin">
+                </div>
+                <div>
+                    <button type="button">Generar reporte</button>
+                </div>
             </form>
 
             <div class="table-responsive">
-                <table id="tabla-reportes" class="table">
-                    <thead>
-                        <tr>
-                            <th>Tipo</th>
-                            <th>Recurso</th>
-                            <th>Persona</th>
-                            <th>Fecha Préstamo</th>
-                            <th>Fecha Devolución</th>
-                            <th>Estado</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <!-- Filas dinámicas aquí -->
-                    </tbody>
+                <table>
+                    <tr>
+                        <th>Tipo</th>
+                        <th>Recurso</th>
+                        <th>Persona</th>
+                        <th>Fecha Préstamo</th>
+                        <th>Fecha Devolución</th>
+                        <th>Estado</th>
+                    </tr>
+                    <!-- Ejemplos de filas. Será dinámico con backend -->
+                    <tr>
+                        <td>Libro</td>
+                        <td>El Principito</td>
+                        <td>Emily Cortés</td>
+                        <td>2024-06-05</td>
+                        <td>2024-06-10</td>
+                        <td>Devuelto</td>
+                    </tr>
+                    <tr>
+                        <td>Computadora</td>
+                        <td>Dell Latitude 5420</td>
+                        <td>Luis Barquero</td>
+                        <td>2024-06-08</td>
+                        <td>2024-06-15</td>
+                        <td>Pendiente</td>
+                    </tr>
+                    <tr>
+                        <td>Tableta</td>
+                        <td>Samsung Galaxy Tab S6 Lite</td>
+                        <td>Angelo Segura</td>
+                        <td>2024-06-06</td>
+                        <td>2024-06-13</td>
+                        <td>Devuelto</td>
+                    </tr>
                 </table>
             </div>
-            
+            <div class="note">
+                *Registros de ejemplo; pronto estarán vinculados con la base de datos real y serán
+                filtrados según los criterios seleccionados.
+            </div>
         </div>
     </section>
     <footer> 
@@ -83,54 +113,6 @@ if (!defined('IN_APP')) {
       <i class="bi bi-whatsapp">  +506 71234567</i><br><br>
       <i class="bi bi-book">  Biblioteca Liceo San José desde 1995</i>
     </footer>
-    <script src="js/jquery-3.7.1.min.js"></script>
-    <script>
-$(document).ready(function() {
-    $('#btn-generar').click(function() {
-        var tipo = $('#tipo-recurso').val();
-        var fecha_inicio = $('#fecha-inicio').val();
-        var fecha_fin = $('#fecha-fin').val();
-        $.post('index.php?controller=reportes&action=generar', {
-            tipo: tipo,
-            fecha_inicio: fecha_inicio,
-            fecha_fin: fecha_fin
-        }, function(resp) {
-            try {
-                var r = (typeof resp === "object") ? resp : JSON.parse(resp);
-                var html = '';
-                if (r.success && r.reportes.length > 0) {
-                    r.reportes.forEach(function(rep) {
-                        html += '<tr>';
-                        html += '<td>' + rep.tipo + '</td>';
-                        html += '<td>' + rep.recurso + '</td>';
-                        html += '<td>' + rep.usuario + ' ' + rep.apellido + '</td>';
-                        html += '<td>' + rep.fecha_prestamo + '</td>';
-                        html += '<td>' + rep.fecha_devolucion + '</td>';
-                        html += '<td>' + rep.estado + '</td>';
-                        html += '</tr>';
-                    });
-                } else {
-                    html = '<tr><td colspan="6">No hay resultados</td></tr>';
-                }
-                $('#tabla-reportes tbody').html(html);
-            } catch (e) {
-                $('#tabla-reportes tbody').html('<tr><td colspan="6">Error al cargar reportes</td></tr>');
-            }
-        });
-    });
-
-    $('#exportar-excel').click(function() {
-        var table = document.getElementById('tabla-reportes');
-        var html = table.outerHTML.replace(/ /g, '%20');
-        var a = document.createElement('a');
-        a.href = 'data:application/vnd.ms-excel,' + html;
-        a.download = 'reporte.xls';
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
-    });
-});
-</script>
 </body>
 
 </html>

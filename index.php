@@ -1,8 +1,8 @@
 <?php
 session_start();
 
-$controller = $_GET['controller'] ?? $_POST['controller'] ?? null;
-$action = $_GET['action'] ?? $_POST['action'] ?? null;
+$controller = $_GET['controller'] ?? null;
+$action = $_GET['action'] ?? null;
 
 if (!$controller) {
     if (isset($_SESSION['usuario'])) {
